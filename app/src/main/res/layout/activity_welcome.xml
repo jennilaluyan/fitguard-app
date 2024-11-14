@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp"
+    android:background="@drawable/background_pattern">
+
+    <ImageView
+        android:id="@+id/imageLogo"
+        android:layout_width="177dp"
+        android:layout_height="164dp"
+        android:contentDescription="Logo FITGUARD"
+        android:src="@mipmap/logo2"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome to FITGUARD!"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#0C4912"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:layout_width="314dp"
+        android:layout_height="64dp"
+        android:layout_marginBottom="30dp"
+        android:gravity="center_horizontal"
+        android:text="Your reliable partner in managing, monitoring, and controlling diabetes for a healthier life."
+        android:textColor="#0C4912"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/buttonLogin"
+        android:layout_width="284dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:backgroundTint="#17D970"
+        android:elevation="8dp"
+        android:padding="12dp"
+        android:text="Login/Register"
+        android:textColor="@android:color/white" />
+
+    <FrameLayout
+        android:id="@+id/main_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp" />
+
+</LinearLayout>

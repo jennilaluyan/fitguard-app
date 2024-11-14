@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "676443447194",
+    "firebase_url": "https://myapplication-d3902-default-rtdb.firebaseio.com",
+    "project_id": "myapplication-d3902",
+    "storage_bucket": "myapplication-d3902.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:676443447194:android:3cc39e39dd44e363796423",
+        "android_client_info": {
+          "package_name": "com.dicodingg.bangkit"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCi0vmC2HvONoN3vtWf2lOCM4pHyW9pfbk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
