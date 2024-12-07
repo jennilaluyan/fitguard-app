@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center"
+    android:background="#F1F5F9">
+
+    <!-- Judul Halaman -->
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Verifikasi Email"
+        android:textSize="24sp"
+        android:textColor="#000000"
+        android:layout_marginBottom="20dp"/>
+
+    <!-- Pesan Konfirmasi Pengiriman Email -->
+    <TextView
+        android:id="@+id/textViewMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tautan verifikasi telah dikirim ke email Anda. Silakan periksa inbox Anda untuk melanjutkan proses pendaftaran."
+        android:textSize="16sp"
+        android:textColor="#555555"
+        android:layout_marginBottom="20dp"
+        android:padding="16dp"/>
+
+    <!-- Progress Bar untuk Menandakan Verifikasi -->
+    <ProgressBar
+        android:id="@+id/progressBarVerifying"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:visibility="visible" />
+
+    <!-- Pesan yang Menyatakan Proses Verifikasi Sedang Berlangsung -->
+    <TextView
+        android:id="@+id/textViewVerifyingMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Menunggu verifikasi email..."
+        android:textSize="16sp"
+        android:textColor="#555555"
+        android:layout_marginTop="20dp"/>
+
+    <!-- Pesan yang Menginformasikan Pengguna jika Email Tidak Diterima -->
+
+    <!-- Tombol untuk Kirim Ulang Email Verifikasi -->
+    <Button
+        android:id="@+id/buttonResendEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Kirim Ulang Email Verifikasi"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#D3EE98"
+        android:textColor="@color/black"/>
+
+    <!-- Tombol untuk Kembali ke Halaman Login -->
+
+</LinearLayout>

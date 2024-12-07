@@ -1,0 +1,81 @@
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <!-- Tambahkan variabel atau import untuk binding di sini -->
+    </data>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Data"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_gravity="center" />
+
+    <!-- Data Type Spinner -->
+    <Spinner
+        android:id="@+id/dataTypeSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/data_type_options" />
+
+    <!-- Custom Data Type Input (hidden initially) -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/customDataTypeInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/customDataTypeInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Specify data type" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Input field for data value -->
+    <EditText
+        android:id="@+id/dataValueInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter value"
+        android:inputType="text"
+        android:layout_marginTop="16dp" />
+
+    <!-- Date picker -->
+    <Button
+        android:id="@+id/datePickerButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select Date"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#72BF78"
+        android:textColor="#FFFFFF" />
+
+    <!-- Action Buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/addButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Add" />
+
+        <Button
+            android:id="@+id/cancelButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Cancel" />
+    </LinearLayout>
+</LinearLayout>
+</layout>

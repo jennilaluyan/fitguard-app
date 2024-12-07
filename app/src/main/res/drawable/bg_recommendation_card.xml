@@ -1,0 +1,8 @@
+<!-- res/drawable/bg_recommendation_card.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <gradient
+        android:startColor="#A5D6A7"
+        android:endColor="#81C784"
+        android:angle="45" />
+    <corners android:radius="8dp" />
+</shape>

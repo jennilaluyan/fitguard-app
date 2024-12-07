@@ -2,16 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-feature
-        android:name="android.hardware.telephony"
-        android:required="false" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
-    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
-    <uses-permission android:name="android.permission.READ_SMS"/>
-
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <application
-        android:name=".MyApplication"
+        android:name=".ui.MyApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -22,13 +18,18 @@
         android:theme="@style/Theme.Bangkit"
         tools:targetApi="31">
 
-        <activity android:name=".HomeActivity" />
-
-        <activity android:name=".LoginRegisterActivity">
+        <activity android:name=".ui.EmailVerificationActivity">
+            <!-- Tambahkan intent filter jika perlu, tapi untuk kasus ini tidak diperlukan -->
+        </activity>
+        <activity android:name=".ui.dashboard.DashboardActivity">
+            <!-- Intent filter atau konfigurasi lainnya jika diperlukan -->
+        </activity>
+        <activity android:name=".ui.LoginActivity" />
+        <activity android:name=".ui.RegisterActivity">
             <!-- Bisa menambahkan pengaturan seperti tema atau intent filter -->
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.WelcomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,0 +1,8 @@
+<!-- res/drawable/bg_card.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <gradient
+        android:startColor="#AED581"
+        android:endColor="#7CB342"
+        android:angle="45" />
+    <corners android:radius="8dp" />
+</shape>

@@ -1,0 +1,30 @@
+<!-- item_dashboard_card.xml -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:background="@drawable/bg_card"
+    android:layout_margin="8dp"
+    android:gravity="center">
+
+    <!-- Card Icon -->
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/ic_health_record" />
+
+    <!-- Card Title -->
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Health Record"
+        android:textSize="14sp"
+        android:textColor="#fff"
+        android:gravity="center"
+        android:paddingTop="8dp" />
+</LinearLayout>

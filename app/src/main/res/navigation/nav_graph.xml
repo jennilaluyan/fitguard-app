@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:startDestination="@id/navigation_dashboard">
+
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="com.dicodingg.bangkit.ui.DashboardFragment"
+        android:label="Dashboard"
+        android:icon="@drawable/ic_dashboard" />
+
+    <fragment
+        android:id="@+id/navigation_prescriptions"
+        android:name="com.dicodingg.bangkit.ui.PrescriptionsFragment"
+        android:label="Prescriptions"
+        android:icon="@drawable/ic_prescriptions" />
+
+    <fragment
+        android:id="@+id/navigation_reports"
+        android:name="com.dicodingg.bangkit.ui.DiabetesReportFragment"
+        android:label="Reports"
+        android:icon="@drawable/ic_reports" />
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.dicodingg.bangkit.ui.ProfileFragment"
+        android:label="Profile"
+        android:icon="@drawable/ic_profile" />
+</navigation>
