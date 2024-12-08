@@ -5,7 +5,7 @@
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.dicodingg.bangkit.ui.DashboardFragment"
+        android:name="com.dicodingg.bangkit.ui.dashboard.DashboardFragment"
         android:label="Dashboard"
         android:icon="@drawable/ic_dashboard" />
 

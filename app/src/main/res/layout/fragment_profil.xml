@@ -1,166 +1,144 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <data>
-
-    </data>
-
-<ScrollView
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true">
-
-    <LinearLayout
+    tools:context=".MainActivity"
+    android:background="#ececec">
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:padding="16dp"
-        android:background="#F5F5F5">
-
-        <!-- Header dengan tombol pengaturan -->
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="200dp"
-            android:layout_alignParentTop="true">
-
-            <TextView
-                android:id="@+id/header"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="53dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp"
-                android:text="Profile"
-                android:textColor="#0C4912"
-                android:textSize="29sp"
-                android:textStyle="bold" />
-
-            <!-- Tombol Pengaturan -->
-            <ImageView
-                android:id="@+id/imageSettings"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:clickable="true"
-                android:contentDescription="Settings"
-                android:focusable="true"
-                android:src="@drawable/baseline_settings_24" />
-        </RelativeLayout>
-
-        <!-- Foto Profil -->
-        <ImageView
-            android:id="@+id/imageProfile"
-            android:layout_width="209dp"
-            android:layout_height="208dp"
-            android:layout_gravity="center"
-            android:layout_marginBottom="16dp"
-            android:contentDescription="Foto Profil"
-            android:src="@drawable/baseline_image_24" />
-
-        <!-- Nama Pengguna -->
-        <TextView
-            android:id="@+id/textUserName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nama Pengguna"
-            android:textSize="20sp"
-            android:textColor="#333333"
-            android:textStyle="bold"
-            android:layout_marginBottom="8dp"
-            android:gravity="center" />
-
-        <!-- Info Umur dan Lokasi -->
-        <TextView
-            android:id="@+id/textUserInfo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="25 Tahun | Jakarta"
-            android:textSize="16sp"
-            android:textColor="#777777"
-            android:layout_marginBottom="16dp"
-            android:gravity="center" />
-
-        <!-- Statistik Kesehatan -->
-        <TextView
-            android:id="@+id/textHealthStatsTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Statistik Kesehatan"
-            android:textSize="18sp"
-            android:textColor="#333333"
-            android:textStyle="bold"
-            android:layout_marginBottom="8dp"
-            android:gravity="center" />
-
+        android:layout_height="match_parent">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_marginBottom="24dp">
+            android:orientation="vertical">
 
-            <!-- Glukosa -->
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:layout_marginEnd="16dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Glukosa"
-                    android:textSize="14sp"
-                    android:textColor="#333333" />
-                <TextView
-                    android:id="@+id/textGlucoseLevel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Normal"
-                    android:textSize="18sp"
-                    android:textColor="#4CAF50" />
-            </LinearLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-            <!-- Tekanan Darah -->
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/top_background" />
 
-            <!-- Berat Badan -->
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center">
-                <TextView
+                <ImageView
+                    android:id="@+id/imageView2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Berat Badan"
-                    android:textSize="14sp"
-                    android:textColor="#333333" />
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/imageView"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView"
+                    app:srcCompat="@drawable/profile" />
+
                 <TextView
-                    android:id="@+id/textWeight"
+                    android:id="@+id/textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="70 kg"
-                    android:textSize="18sp"
-                    android:textColor="#4CAF50" />
-            </LinearLayout>
+                    android:text="Lion Fischer"
+                    android:layout_marginTop="16dp"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+
+                    app:layout_constraintEnd_toEndOf="@+id/imageView2"
+                    app:layout_constraintStart_toStartOf="@+id/imageView2"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="lionfischer@gmail.com"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="@+id/textView"
+                    app:layout_constraintStart_toStartOf="@+id/textView"
+                    app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/button1"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginStart="32dp"
+                        android:layout_marginTop="10dp"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        style="@android:style/Widget.Button"
+                        android:layout_marginEnd="32dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/btn_background_1"
+                        android:drawableStart="@drawable/baseline_edit_24"
+                        android:drawablePadding="20dp"
+                        android:paddingStart="20dp"
+                        android:text="Edit Foto Profile"
+                        android:textAlignment="viewStart" />
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/button2"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginStart="32dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="32dp"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        style="@android:style/Widget.Button"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/btn_background_1"
+                        android:drawableStart="@drawable/ic_2"
+                        android:drawablePadding="20dp"
+                        android:paddingStart="20dp"
+                        android:text="Account Settings"
+                        android:textAlignment="viewStart" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/button4"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginStart="32dp"
+                        android:layout_marginTop="10dp"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        style="@android:style/Widget.Button"
+                        android:layout_marginEnd="32dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/btn_background_1"
+                        android:drawableStart="@drawable/ic_4"
+                        android:drawablePadding="20dp"
+                        android:paddingStart="20dp"
+                        android:text="Notification"
+                        android:textAlignment="viewStart" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/button5"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        style="@android:style/Widget.Button"
+                        android:background="@drawable/rounded_background_green"
+                        android:layout_marginEnd="32dp"
+                        android:layout_marginStart="32dp"
+                        android:layout_marginTop="16dp"
+                        android:text="Log Out"
+                        android:textColor="#ffffff"
+                        android:textStyle="bold"
+                        android:textSize="18sp"/>
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
-
-        <!-- Tombol Edit Profil -->
-        <Button
-            android:id="@+id/buttonEditProfile"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Edit Profil"
-            android:textColor="#FFFFFF"
-            android:backgroundTint="@color/bottom_nav_background"
-            android:padding="12dp" />
-    </LinearLayout>
-</ScrollView>
-</layout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

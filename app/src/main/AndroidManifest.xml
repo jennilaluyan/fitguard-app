@@ -6,6 +6,10 @@
 
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+
     <application
         android:name=".ui.MyApplication"
         android:allowBackup="true"
@@ -21,9 +25,17 @@
         <activity android:name=".ui.EmailVerificationActivity">
             <!-- Tambahkan intent filter jika perlu, tapi untuk kasus ini tidak diperlukan -->
         </activity>
-        <activity android:name=".ui.dashboard.DashboardActivity">
-            <!-- Intent filter atau konfigurasi lainnya jika diperlukan -->
-        </activity>
+        <activity android:name=".ui.InputDataActivity" />
+        <activity android:name=".ui.LoadingDataActivity" />
+        <activity android:name=".ui.NotificationActivity" />
+        <activity android:name=".ui.SettingsActivity" />
+        <activity android:name=".ui.MainActivity" />
+        <activity android:name=".ui.WaterTrackerActivity" />
+        <activity android:name=".ui.MedicationReminderActivity" />
+        <activity android:name=".ui.PhysicalActivityActivity" />
+        <activity android:name=".ui.HealthRecordActivity" />
+        <activity android:name=".ui.AddMealActivity" />
+        <activity android:name=".ui.NutritionTrackerActivity" />
         <activity android:name=".ui.LoginActivity" />
         <activity android:name=".ui.RegisterActivity">
             <!-- Bisa menambahkan pengaturan seperti tema atau intent filter -->

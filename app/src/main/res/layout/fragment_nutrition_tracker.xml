@@ -296,6 +296,8 @@
                             android:text="Water name"
                             android:textColor="@android:color/white"
                             android:textSize="14sp" />
+
+
                     </LinearLayout>
 
                     <TextView

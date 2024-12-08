@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:padding="16dp">
+
+    <!-- Hamil? Input -->
+    <TextView
+        android:id="@+id/textPregnancies"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hamil?"
+        android:textSize="16sp"
+        android:textColor="@android:color/black" />
+    <Switch
+        android:id="@+id/switchPregnancies"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:thumbTint="@android:color/holo_green_light"
+    android:trackTint="@android:color/holo_green_light"
+    android:text="Hamil?"
+    android:textColor="@android:color/black" />
+
+
+    <!-- Glukosa Input -->
+    <TextView
+        android:id="@+id/textGlucose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Level Glukosa"
+        android:textSize="16sp"
+        android:textColor="@android:color/black" />
+    <EditText
+        android:id="@+id/editGlucose"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Masukkan level glukosa"
+        android:inputType="number" />
+
+    <!-- Tekanan Darah Input -->
+    <TextView
+        android:id="@+id/textBloodPressure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tekanan Darah"
+        android:textSize="16sp"
+        android:textColor="@android:color/black" />
+    <EditText
+        android:id="@+id/editBloodPressure"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Masukkan tekanan darah"
+        android:inputType="number" />
+
+    <!-- Umur Input -->
+    <TextView
+        android:id="@+id/textAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tanggal Lahir"
+        android:textSize="16sp"
+        android:textColor="@android:color/black" />
+    <EditText
+        android:id="@+id/editBirthDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Masukkan tanggal lahir (YYYY-MM-DD)"
+        android:inputType="date" />
+
+    <!-- Berat Badan Input -->
+    <TextView
+        android:id="@+id/textWeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Berat Badan (kg)"
+        android:textSize="16sp"
+        android:textColor="@android:color/black" />
+    <EditText
+        android:id="@+id/editWeight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Masukkan berat badan"
+        android:inputType="numberDecimal" />
+
+    <!-- Tinggi Badan Input -->
+    <TextView
+        android:id="@+id/textHeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tinggi Badan (cm)"
+        android:textSize="16sp"
+        android:textColor="@android:color/black" />
+    <EditText
+        android:id="@+id/editHeight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Masukkan tinggi badan"
+        android:inputType="numberDecimal" />
+
+    <!-- BMI (Readonly) -->
+    <TextView
+        android:id="@+id/textBMI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BMI"
+        android:textSize="16sp"
+        android:textColor="@android:color/black" />
+    <TextView
+        android:id="@+id/textCalculatedBMI"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="BMI akan dihitung secara otomatis"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        android:paddingTop="8dp" />
+
+    <!-- Submit Button -->
+    <Button
+        android:id="@+id/buttonSubmit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#17D970"
+        android:text="Submit" />
+</LinearLayout>

@@ -34,6 +34,8 @@ android {
     buildFeatures {
         //noinspection DataBindingWithoutKapt
         dataBinding = true
+
+        viewBinding = true
     }
 
 
@@ -67,6 +69,7 @@ dependencies {
 
     implementation ("androidx.databinding:databinding-runtime:7.4.0")
 
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1")
     implementation ("androidx.navigation:navigation-fragment-ktx:2.7.3")
     implementation ("androidx.navigation:navigation-ui-ktx:2.7.3")
     implementation("com.github.PhilJay:MPAndroidChart:v3.1.0")
@@ -74,6 +77,8 @@ dependencies {
     implementation ("com.github.kirich1409:viewbindingpropertydelegate:1.5.3")
 
     implementation ("com.github.bumptech.glide:glide:4.15.0")
+
+    
 
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.1")
 

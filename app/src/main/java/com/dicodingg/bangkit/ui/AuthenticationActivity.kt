@@ -86,7 +86,7 @@ class EmailVerificationActivity : AppCompatActivity() {
     }
 
     private fun redirectToLogin() {
-        val intent = Intent(this, LoginActivity::class.java)
+        val intent = Intent(this, InputDataActivity::class.java)
         startActivity(intent)
         finish() // Tutup EmailVerificationActivity
     }

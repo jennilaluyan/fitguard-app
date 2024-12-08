@@ -1,12 +1,11 @@
 package com.dicodingg.bangkit.ui
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.activityViewModels
+import androidx.appcompat.app.AppCompatActivity
+import androidx.activity.viewModels
 import com.dicodingg.bangkit.R
 import com.dicodingg.bangkit.databinding.FragmentNutritionTrackerBinding
 import com.dicodingg.bangkit.viewmodel.Meal
@@ -19,12 +18,10 @@ import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
 
-class NutritionTrackerFragment : Fragment() {
+class NutritionTrackerActivity : AppCompatActivity() {
 
-    private var _binding: FragmentNutritionTrackerBinding? = null
-    private val binding get() = _binding!!
-
-    private val nutritionViewModel: NutritionViewModel by activityViewModels()
+    private lateinit var binding: FragmentNutritionTrackerBinding
+    private val nutritionViewModel: NutritionViewModel by viewModels()
     private var currentWeekOffset = 0
     private var currentMonthOffset = 0
 
@@ -35,16 +32,11 @@ class NutritionTrackerFragment : Fragment() {
         "Dinner" to Color.parseColor("#FFB643")
     )
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentNutritionTrackerBinding.inflate(inflater, container, false)
-        return binding.root
-    }
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = FragmentNutritionTrackerBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
         setupPieChart()
 
         // Set up current date
@@ -55,7 +47,7 @@ class NutritionTrackerFragment : Fragment() {
 
         // Set up the back button
         binding.backButton.setOnClickListener {
-            requireActivity().supportFragmentManager.popBackStack()
+            onBackPressedDispatcher.onBackPressed()
         }
 
         // Set up meal click listeners
@@ -249,7 +241,6 @@ class NutritionTrackerFragment : Fragment() {
     }
 
     private fun updateWeeklyData() {
-        // Dummy data for week view
         val dummyData = mapOf(
             "Breakfast" to Meal("Breakfast", "Weekly Average", (250..350).random(), 1f, "portions"),
             "Lunch" to Meal("Lunch", "Weekly Average", (400..600).random(), 1f, "portions"),
@@ -260,7 +251,6 @@ class NutritionTrackerFragment : Fragment() {
     }
 
     private fun updateMonthlyData() {
-        // Dummy data for month view
         val dummyData = mapOf(
             "Breakfast" to Meal("Breakfast", "Monthly Average", (250..350).random(), 1f, "portions"),
             "Lunch" to Meal("Lunch", "Monthly Average", (400..600).random(), 1f, "portions"),
@@ -272,58 +262,48 @@ class NutritionTrackerFragment : Fragment() {
 
     private fun setupMealClickListeners() {
         binding.breakfastLayout.setOnClickListener {
-            navigateToAddMealFragment("Breakfast")
+            navigateToAddMealActivity("Breakfast")
         }
 
         binding.lunchLayout.setOnClickListener {
-            navigateToAddMealFragment("Lunch")
+            navigateToAddMealActivity("Lunch")
         }
 
         binding.waterLayout.setOnClickListener {
-            navigateToAddMealFragment("Water")
+            navigateToAddMealActivity("Water")
         }
 
         binding.dinnerLayout.setOnClickListener {
-            navigateToAddMealFragment("Dinner")
+            navigateToAddMealActivity("Dinner")
         }
     }
 
-    private fun navigateToAddMealFragment(mealType: String) {
-        val addMealFragment = AddMealFragment.newInstance(mealType)
-        requireActivity().supportFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container, addMealFragment)
-            .addToBackStack(null)
-            .commit()
+    private fun navigateToAddMealActivity(mealType: String) {
+        val intent = Intent(this, AddMealActivity::class.java).apply {
+            putExtra("MEAL_TYPE", mealType)
+        }
+        startActivity(intent)
     }
 
     private fun observeMeals() {
-        nutritionViewModel.meals.observe(viewLifecycleOwner) { meals ->
+        nutritionViewModel.meals.observe(this) { meals ->
             meals["Breakfast"]?.let { meal ->
                 binding.breakfastCalories.text = getString(R.string.calories_format, meal.calories)
-                binding.breakfastDescription.text = meal.foodName
+                binding.breakfastDescription.text =  meal.foodName
             }
-
             meals["Lunch"]?.let { meal ->
                 binding.lunchCalories.text = getString(R.string.calories_format, meal.calories)
-                binding.lunchDescription.text = meal.foodName
+                binding.lunchDescription.text =  meal.foodName
             }
-
             meals["Water"]?.let { meal ->
                 binding.waterAmount.text = getString(R.string.water_format, meal.calories)
-                binding.waterDescription.text = meal.foodName
+                binding.waterDescription.text =  meal.foodName
             }
-
             meals["Dinner"]?.let { meal ->
                 binding.dinnerCalories.text = getString(R.string.calories_format, meal.calories)
-                binding.dinnerDescription.text = meal.foodName
+                binding.dinnerDescription.text =  meal.foodName
             }
-
             updatePieChart()
         }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 }

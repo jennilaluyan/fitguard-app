@@ -1,38 +1,28 @@
-//AddMealFragment.kt
 package com.dicodingg.bangkit.ui
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Toast
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.activityViewModels
-import com.dicodingg.bangkit.databinding.FragmentAddMealBinding
+import androidx.appcompat.app.AppCompatActivity
+import com.dicodingg.bangkit.databinding.ActivityAddMealBinding
 import com.dicodingg.bangkit.viewmodel.NutritionViewModel
 
-class AddMealFragment : Fragment() {
-    private var _binding: FragmentAddMealBinding? = null
-    private val binding get() = _binding!!
+class AddMealActivity : AppCompatActivity() {
 
-    private val nutritionViewModel: NutritionViewModel by activityViewModels()
+    private lateinit var binding: ActivityAddMealBinding
+    private val nutritionViewModel: NutritionViewModel by lazy { NutritionViewModel() }
 
     private var selectedMealType: String = ""
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentAddMealBinding.inflate(inflater, container, false)
-        return binding.root
-    }
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivityAddMealBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        // Retrieve meal type from arguments
-        selectedMealType = arguments?.getString(ARG_MEAL_TYPE) ?: ""
+        // Retrieve meal type from Intent
+        selectedMealType = intent.getStringExtra(ARG_MEAL_TYPE) ?: ""
 
         // Set up meal type text
         binding.mealTypeTitle.text = "Add $selectedMealType"
@@ -43,7 +33,7 @@ class AddMealFragment : Fragment() {
             "Water" -> arrayOf("Glass", "Ml")
             else -> arrayOf("Serving")
         }
-        val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, portionTypes)
+        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, portionTypes)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         binding.portionTypeSpinner.adapter = adapter
 
@@ -54,7 +44,7 @@ class AddMealFragment : Fragment() {
 
         // Set up back button
         binding.backButton.setOnClickListener {
-            requireActivity().supportFragmentManager.popBackStack()
+            onBackPressed()
         }
     }
 
@@ -66,7 +56,7 @@ class AddMealFragment : Fragment() {
 
         // Validate inputs
         if (foodName.isEmpty() || caloriesText.isEmpty() || portionText.isEmpty()) {
-            Toast.makeText(requireContext(), "Please fill all fields", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show()
             return
         }
 
@@ -83,23 +73,16 @@ class AddMealFragment : Fragment() {
         )
 
         // Navigate back to Nutrition Tracker
-        requireActivity().supportFragmentManager.popBackStack()
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+        onBackPressed()
     }
 
     companion object {
         private const val ARG_MEAL_TYPE = "arg_meal_type"
 
-        fun newInstance(mealType: String): AddMealFragment {
-            val fragment = AddMealFragment()
-            val args = Bundle()
-            args.putString(ARG_MEAL_TYPE, mealType)
-            fragment.arguments = args
-            return fragment
+        fun newIntent(context: Context, mealType: String): Intent {
+            val intent = Intent(context, AddMealActivity::class.java) // Gunakan 'context' di sini
+            intent.putExtra(ARG_MEAL_TYPE, mealType)
+            return intent
         }
     }
 }

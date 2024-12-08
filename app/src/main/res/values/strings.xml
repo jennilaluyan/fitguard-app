@@ -7,4 +7,6 @@
     <string name="calories_format">%d Kcal</string>
     <string name="water_format">%d Ml</string>
     <string name="nutrition_chart_center_text">Target\n1000 Cal\n\nConsumed\n%d Cal</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

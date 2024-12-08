@@ -10,7 +10,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.dicodingg.bangkit.R
-import com.dicodingg.bangkit.ui.dashboard.DashboardActivity
+import com.dicodingg.bangkit.ui.dashboard.DashboardFragment
 import com.google.firebase.auth.FirebaseAuth
 
 class LoginActivity : AppCompatActivity() {
@@ -54,15 +54,17 @@ class LoginActivity : AppCompatActivity() {
                         // Jika login berhasil
                         Toast.makeText(this, "Login berhasil.", Toast.LENGTH_SHORT).show()
 
-                        // Pindah ke halaman utama setelah login berhasil
-                        val intent = Intent(this, DashboardActivity::class.java)
+                        val intent = Intent(this, MainActivity::class.java)
                         startActivity(intent)
-                        finish() // Tutup LoginActivity agar tidak bisa kembali ke halaman login
+                        finish() // Agar tidak kembali ke LoginActivity
+
+
                     } else {
                         // Jika login gagal, tampilkan pesan error
                         Toast.makeText(this, "Login gagal: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
                     }
                 }
+
         }
     }
     private fun animateViews() {

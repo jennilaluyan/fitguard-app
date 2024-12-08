@@ -1,33 +1,24 @@
 package com.dicodingg.bangkit.ui
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.TextView
-import androidx.fragment.app.Fragment
-import com.dicodingg.bangkit.databinding.FragmentHealthRecordBinding
+import androidx.appcompat.app.AppCompatActivity
 import com.dicodingg.bangkit.R
+import com.dicodingg.bangkit.databinding.ActivityHealthRecordBinding
 
+class HealthRecordActivity : AppCompatActivity() {
 
-class HealthRecordFragment : Fragment() {
+    private lateinit var binding: ActivityHealthRecordBinding
 
-    private var _binding: FragmentHealthRecordBinding? = null
-    private val binding get() = _binding!!
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivityHealthRecordBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        _binding = FragmentHealthRecordBinding.inflate(inflater, container, false)
+        // Handle back button click
         binding.backButton.setOnClickListener {
-            requireActivity().onBackPressedDispatcher.onBackPressed()
+            onBackPressedDispatcher.onBackPressed()
         }
-        return binding.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
 
         // Handle add data button click
         binding.addDataButton.setOnClickListener {
@@ -43,11 +34,7 @@ class HealthRecordFragment : Fragment() {
                     }
                 }
             }
-            dialog.show(parentFragmentManager, "AddDataDialogFragment")
+            dialog.show(supportFragmentManager, "AddDataDialogFragment")
         }
-    }
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 }
