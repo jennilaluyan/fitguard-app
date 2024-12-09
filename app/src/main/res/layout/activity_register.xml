@@ -9,23 +9,25 @@
     android:padding="16dp"
     android:background="#F5F5F5">
 
+    <!-- Title -->
     <TextView
         android:id="@+id/textViewTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Lengkapi dulu data dirimu di bawah ini ya"
-        android:textSize="24sp"
+        android:text="Buat akunmu sekarang, yuk!"
+        android:textSize="26sp"
         android:textColor="#333333"
-        android:layout_marginBottom="1dp"
+        android:layout_marginBottom="8dp"
         android:textStyle="bold"
         android:gravity="center" />
 
+    <!-- Description -->
     <TextView
         android:id="@+id/textViewDesc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Harap Menggunakan Email Yang Aktif!"
-        android:textSize="17sp"
+        android:text="Gunakan email aktif dan kata sandi yang aman ya."
+        android:textSize="15sp"
         android:textColor="#333333"
         android:layout_marginBottom="20dp"
         android:gravity="center" />
@@ -42,6 +44,7 @@
             android:id="@+id/editTextEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="Masukkan Email"
             android:drawableStart="@drawable/baseline_email_24"
             android:drawablePadding="8dp"
             android:inputType="textEmailAddress"
@@ -49,7 +52,7 @@
             android:padding="12dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- Kata Sandi Field -->
+    <!-- Password Field -->
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -61,6 +64,7 @@
             android:id="@+id/editTextPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="Masukkan Kata Sandi"
             android:drawableStart="@drawable/baseline_lock_24"
             android:drawablePadding="8dp"
             android:inputType="textPassword"
@@ -68,7 +72,7 @@
             android:padding="12dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- Konfirmasi Kata Sandi Field -->
+    <!-- Confirm Password Field -->
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -80,6 +84,7 @@
             android:id="@+id/editTextConfirmPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="Konfirmasi Kata Sandi"
             android:drawableStart="@drawable/baseline_lock_24"
             android:drawablePadding="8dp"
             android:inputType="textPassword"
@@ -87,7 +92,7 @@
             android:padding="12dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- Daftar Button -->
+    <!-- Register Button -->
     <Button
         android:id="@+id/buttonRegister"
         android:layout_width="match_parent"

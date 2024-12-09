@@ -25,12 +25,11 @@ class AddMealActivity : AppCompatActivity() {
         selectedMealType = intent.getStringExtra(ARG_MEAL_TYPE) ?: ""
 
         // Set up meal type text
-        binding.mealTypeTitle.text = "Add $selectedMealType"
+        binding.mealTypeTitle.text = "Tambah $selectedMealType"
 
         // Set up portion/serving type spinner
         val portionTypes = when (selectedMealType) {
-            "Breakfast", "Lunch", "Dinner" -> arrayOf("Portion", "Plate", "Bowl")
-            "Water" -> arrayOf("Glass", "Ml")
+            "Sarapan", "Makan Siang", "Makan Malam" -> arrayOf("Porsi", "Piring", "Mangkuk")
             else -> arrayOf("Serving")
         }
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, portionTypes)
@@ -56,7 +55,7 @@ class AddMealActivity : AppCompatActivity() {
 
         // Validate inputs
         if (foodName.isEmpty() || caloriesText.isEmpty() || portionText.isEmpty()) {
-            Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Tolong diisi semua kolomnya.", Toast.LENGTH_SHORT).show()
             return
         }
 

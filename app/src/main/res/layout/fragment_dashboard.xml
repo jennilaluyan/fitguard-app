@@ -12,7 +12,6 @@
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
             android:padding="16dp">
 
             <LinearLayout
@@ -26,7 +25,7 @@
                     android:id="@+id/tv_date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Friday, 19 Jul"
+                    android:text="Jumat, 19 Jul"
                     android:textColor="#333"
                     android:textSize="14sp"
                     android:layout_marginLeft="13dp"/>
@@ -58,9 +57,9 @@
                             android:id="@+id/tv_welcome"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Welcome back, Jenn!"
+                            android:text="Halo, Jenn!"
                             android:textColor="#000"
-                            android:textSize="23sp"
+                            android:textSize="29sp"
                             android:textStyle="bold"
                             android:paddingTop="4dp" />
 
@@ -68,9 +67,9 @@
                             android:id="@+id/tv_motivation"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Stay balanced, stay strong."
+                            android:text="Hidup teratur, tubuh tangguh."
                             android:textColor="#777"
-                            android:textSize="12sp"
+                            android:textSize="14sp"
                             android:paddingTop="2dp" />
                     </LinearLayout>
                 </LinearLayout>
@@ -102,15 +101,15 @@
                         android:gravity="center"
                         android:layout_margin="8dp">
                         <ImageView
-                            android:layout_width="70dp"
-                            android:layout_height="70dp"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
                             android:src="@drawable/ic_health_record" />
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Health Record"
+                            android:text="Catatan Kesehatan"
                             android:textStyle="bold"
-                            android:textSize="17sp"
+                            android:textSize="25sp"
                             android:textColor="#fff"
                             android:gravity="center"
                             android:paddingTop="8dp" />
@@ -128,15 +127,15 @@
                         android:gravity="center"
                         android:layout_margin="8dp">
                         <ImageView
-                            android:layout_width="70dp"
-                            android:layout_height="70dp"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
                             android:src="@drawable/ic_nutrition_tracker" />
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Nutrition Tracker"
+                            android:text="Pemantau Nutrisi"
                             android:textStyle="bold"
-                            android:textSize="17sp"
+                            android:textSize="25sp"
                             android:textColor="#fff"
                             android:gravity="center"
                             android:paddingTop="8dp" />
@@ -154,15 +153,15 @@
                         android:gravity="center"
                         android:layout_margin="8dp">
                         <ImageView
-                            android:layout_width="70dp"
-                            android:layout_height="70dp"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
                             android:src="@drawable/ic_physical_activity" />
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Physical Activity"
+                            android:text="Aktivitas Fisik"
                             android:textStyle="bold"
-                            android:textSize="17sp"
+                            android:textSize="25sp"
                             android:textColor="#fff"
                             android:gravity="center"
                             android:paddingTop="8dp" />
@@ -180,15 +179,15 @@
                         android:gravity="center"
                         android:layout_margin="8dp">
                         <ImageView
-                            android:layout_width="70dp"
-                            android:layout_height="70dp"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
                             android:src="@drawable/ic_water_tracker" />
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Water Tracker"
+                            android:text="Asupan Air Minum"
                             android:textStyle="bold"
-                            android:textSize="17sp"
+                            android:textSize="25sp"
                             android:textColor="#fff"
                             android:gravity="center"
                             android:paddingTop="8dp" />
@@ -207,15 +206,15 @@
                         android:gravity="center"
                         android:layout_margin="8dp">
                         <ImageView
-                            android:layout_width="70dp"
-                            android:layout_height="70dp"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
                             android:src="@drawable/ic_medication_reminder" />
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Medication Reminder"
+                            android:text="Jadwal Obat"
                             android:textStyle="bold"
-                            android:textSize="17sp"
+                            android:textSize="25sp"
                             android:textColor="#fff"
                             android:gravity="center"
                             android:paddingTop="8dp" />
