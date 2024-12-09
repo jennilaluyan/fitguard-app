@@ -20,7 +20,7 @@
         android:id="@+id/textWelcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome to FITGUARD!"
+        android:text="Selamat Datang di FitGuard!"
         android:textSize="24sp"
         android:textStyle="bold"
         android:textColor="#0C4912"
@@ -32,8 +32,7 @@
         android:layout_height="64dp"
         android:layout_marginBottom="30dp"
         android:gravity="center_horizontal"
-        android:text="Your reliable partner in managing, monitoring, and controlling diabetes for a healthier life."
-        android:textColor="#0C4912"
+        android:text="Partner terpercaya Anda dalam mengelola, memantau, dan menjaga kesehatan untuk hidup yang lebih baik."        android:textColor="#0C4912"
         android:textSize="16sp" />
 
     <Button
@@ -44,7 +43,7 @@
         android:backgroundTint="#17D970"
         android:elevation="8dp"
         android:padding="12dp"
-        android:text="Login"
+        android:text="Masuk"
         android:textColor="@android:color/white" />
 
     <Button
@@ -55,7 +54,7 @@
         android:backgroundTint="#17D970"
         android:elevation="8dp"
         android:padding="12dp"
-        android:text="Register"
+        android:text="Daftar"
         android:textColor="@android:color/white" />
 
     <FrameLayout

@@ -22,8 +22,7 @@
         android:id="@+id/textViewMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tautan verifikasi telah dikirim ke email Anda. Silakan periksa inbox Anda untuk melanjutkan proses pendaftaran."
-        android:textSize="16sp"
+        android:text="Kami sudah kirim tautan verifikasi ke email kamu. Cek inbox kamu ya buat lanjut daftar!"        android:textSize="16sp"
         android:textColor="#555555"
         android:layout_marginBottom="20dp"
         android:padding="16dp"/>

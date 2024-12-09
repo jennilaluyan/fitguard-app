@@ -1,210 +1,209 @@
 <!--fragment_physical_activity.xml-->
 
 <layout
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
         <!-- Variabel binding opsional -->
     </data>
 
-<RelativeLayout
-
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#FFFFFF">
-
-    <!-- Header Section -->
-    <RelativeLayout
-        android:id="@+id/header"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#72BF78"
-        android:padding="16dp">
-
-        <ImageView
-            android:id="@+id/back_button"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/ic_back"
-            android:layout_alignParentStart="true"
-            android:contentDescription="Back" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:text="Physical Activity"
-            android:textColor="@android:color/white"
-            android:textSize="22sp"
-            android:textStyle="bold" />
-    </RelativeLayout>
-
-    <!-- Scrollable Content -->
-    <ScrollView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/header"
-        android:padding="16dp">
+        android:background="#E8F5E9">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/toolbarLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="?attr/actionBarSize"
+            android:background="#72BF78"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <!-- Date Selector -->
-            <TextView
-                android:id="@+id/dateSelector"
+            <ImageButton
+                android:id="@+id/backButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sunday, Nov 03 ▼"
-                android:textSize="18sp"
-                android:textColor="#333333"
-                android:gravity="center"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="16dp" />
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_back"
+                android:padding="12dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
 
-            <!-- Circular Indicators and Labels Row -->
-            <LinearLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center"
-                android:layout_marginBottom="16dp">
+                android:text="Aktivitas Fisik"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <!-- Green Circle and Text for Steps -->
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:gravity="center">
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/toolbarLayout"
+            app:layout_constraintBottom_toBottomOf="parent">
 
-                    <ImageView
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:src="@drawable/ic_green_circle" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Steps"
-                        android:textSize="14sp"
-                        android:textColor="#66BB6A"
-                        android:gravity="center" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="6000"
-                        android:textSize="18sp"
-                        android:textColor="#000000"
-                        android:textStyle="bold"
-                        android:gravity="center" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="/5000"
-                        android:textSize="14sp"
-                        android:textColor="#888888"
-                        android:gravity="center" />
-                </LinearLayout>
-
-                <!-- Spacer between circles -->
-                <View
-                    android:layout_width="32dp"
-                    android:layout_height="wrap_content" />
-
-                <!-- Blue Circle and Text for Activity -->
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:gravity="center">
-
-                    <ImageView
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:src="@drawable/ic_blue_circle" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Activity"
-                        android:textSize="14sp"
-                        android:textColor="#42A5F5"
-                        android:gravity="center" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="15"
-                        android:textSize="18sp"
-                        android:textColor="#000000"
-                        android:textStyle="bold"
-                        android:gravity="center" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="/10"
-                        android:textSize="14sp"
-                        android:textColor="#888888"
-                        android:gravity="center" />
-                </LinearLayout>
-            </LinearLayout>
-
-            <!-- Steps Card -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:background="#EEEEEE"
-                android:padding="16dp"
-                android:layout_marginBottom="16dp"
-                android:elevation="4dp">
+                android:padding="16dp">
 
+                <!-- Steps Input Section -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:textColorHint="#808080"
+                    app:boxStrokeColor="#808080">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/stepsInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Masukkan langkah"
+                        android:inputType="number"
+                        android:textColor="@android:color/black"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/addStepsButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Tambah langkah"
+                    android:textColor="@android:color/white"
+                    app:backgroundTint="#4CAF50"/>
+
+                <!-- Progress Section -->
+                <TextView
+                    android:id="@+id/stepsText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0/10,000 langkah"
+                    android:textColor="@android:color/black"
+                    android:textSize="28sp"
+                    android:textStyle="bold"/>
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="24dp"
+                    android:layout_marginTop="16dp"
+                    android:progressDrawable="@drawable/custom_progress_bar"/>
+
+                <!-- Calories Section -->
+                <TextView
+                    android:id="@+id/caloriesText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="0 kalori terbakar"
+                    android:textColor="@android:color/black"
+                    android:textSize="25sp" />
+
+                <!-- Exercise Input Section -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Steps"
+                    android:layout_marginTop="32dp"
+                    android:text="Tambah Aktivitas"
+                    android:textColor="@android:color/black"
                     android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:textColor="#000000" />
+                    android:textStyle="bold"/>
 
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:textColorHint="#808080"
+                    app:boxStrokeColor="#808080">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/exerciseNameInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Nama aktivitas"
+                        android:textColor="@android:color/black"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="8dp"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:textColorHint="#808080"
+                        app:boxStrokeColor="#808080">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/exerciseDurationInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Durasi (menit)"
+                            android:inputType="number"
+                            android:textColor="@android:color/black"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:textColorHint="#808080"
+                        app:boxStrokeColor="#808080">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/exerciseCaloriesInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Kalori"
+                            android:inputType="number"
+                            android:textColor="@android:color/black"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/addExerciseButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Tambah aktivitas"
+                    android:textColor="@android:color/white"
+                    app:backgroundTint="#4CAF50"/>
+
+                <!-- Exercise History -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="6000/5000"
-                    android:textSize="16sp"
-                    android:textColor="#888888" />
-            </LinearLayout>
-
-            <!-- Calories Card -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:background="#EEEEEE"
-                android:padding="16dp"
-                android:elevation="4dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Calories"
+                    android:layout_marginTop="24dp"
+                    android:text="Aktivitas"
+                    android:textColor="@android:color/black"
                     android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:textColor="#000000" />
+                    android:textStyle="bold"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/exerciseHistoryRecyclerView"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="400/300"
-                    android:textSize="16sp"
-                    android:textColor="#888888" />
-            </LinearLayout>
+                    android:layout_marginTop="8dp"/>
 
-        </LinearLayout>
-    </ScrollView>
-</RelativeLayout>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
