@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@android:id/background">
@@ -15,22 +14,4 @@
             </shape>
         </scale>
     </item>
-=======
-<?xml version="1.0" encoding="utf-8"?>
-<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@android:id/background">
-        <shape android:shape="rectangle">
-            <corners android:radius="12dp"/>
-            <solid android:color="#2E2E2E"/>
-        </shape>
-    </item>
-    <item android:id="@android:id/progress">
-        <scale android:scaleWidth="100%">
-            <shape android:shape="rectangle">
-                <corners android:radius="12dp"/>
-                <solid android:color="#4CAF50"/>
-            </shape>
-        </scale>
-    </item>
->>>>>>> d399343d8109ac16321d7e7b3b8942ec0f62061f
 </layer-list>
