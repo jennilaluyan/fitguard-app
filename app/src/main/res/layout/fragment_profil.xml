@@ -6,9 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:background="#ececec">
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -16,61 +18,71 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
 
-                <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:scaleType="fitXY"
+                <!-- Background Section -->
+                <TextView
+                    android:id="@+id/textViewBackground"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:background="#7BC836"
+                    android:textColor="#FFFFFF"
+                    android:gravity="center"
+                    android:textSize="24sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/top_background" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
+                <!-- Profile Image -->
                 <ImageView
-                    android:id="@+id/imageView2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintBottom_toBottomOf="@+id/imageView"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="@+id/imageView"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView"
-                    app:srcCompat="@drawable/profile" />
+                    android:id="@+id/imageViewProfile"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/profile"
+                android:contentDescription="Profile Image"
+                app:layout_constraintBottom_toBottomOf="@+id/textViewBackground"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewBackground" />
 
+                <!-- Profile Name -->
                 <TextView
                     android:id="@+id/textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Lion Fischer"
-                    android:layout_marginTop="16dp"
                     android:textSize="25sp"
                     android:textStyle="bold"
+                    android:layout_marginTop="16dp"
+                    android:textColor="#0D0C0C"
+                    app:layout_constraintEnd_toEndOf="@+id/imageViewProfile"
+                    app:layout_constraintStart_toStartOf="@+id/imageViewProfile"
+                    app:layout_constraintTop_toBottomOf="@+id/imageViewProfile" />
 
-                    app:layout_constraintEnd_toEndOf="@+id/imageView2"
-                    app:layout_constraintStart_toStartOf="@+id/imageView2"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView2" />
-
+                <!-- Email -->
                 <TextView
                     android:id="@+id/textView2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="lionfischer@gmail.com"
+                    android:textColor="#0D0C0C"
                     android:textSize="20sp"
                     app:layout_constraintEnd_toEndOf="@+id/textView"
                     app:layout_constraintStart_toStartOf="@+id/textView"
                     app:layout_constraintTop_toBottomOf="@+id/textView" />
 
+                <!-- Button Section -->
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="vertical"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView2">
 
-
+                    <!-- Edit Profile Button -->
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button1"
                         android:layout_width="match_parent"
@@ -88,6 +100,8 @@
                         android:paddingStart="20dp"
                         android:text="Edit Foto Profile"
                         android:textAlignment="viewStart" />
+
+                    <!-- Account Settings Button -->
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button2"
                         android:layout_width="match_parent"
@@ -106,6 +120,7 @@
                         android:text="Account Settings"
                         android:textAlignment="viewStart" />
 
+                    <!-- Notification Button -->
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button4"
                         android:layout_width="match_parent"
@@ -124,19 +139,21 @@
                         android:text="Notification"
                         android:textAlignment="viewStart" />
 
+                    <!-- Log Out Button -->
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button5"
                         android:layout_width="match_parent"
-                        android:layout_height="60dp"
-                        style="@android:style/Widget.Button"
-                        android:background="@drawable/rounded_background_green"
-                        android:layout_marginEnd="32dp"
-                        android:layout_marginStart="32dp"
-                        android:layout_marginTop="16dp"
+                        android:layout_height="wrap_content"
                         android:text="Log Out"
-                        android:textColor="#ffffff"
-                        android:textStyle="bold"
-                        android:textSize="18sp"/>
+                        android:textColor="#000000"
+                    android:textStyle="normal"
+                    android:textSize="16sp"
+                    android:background="@drawable/buttom_shape"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp" />
+
+
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>

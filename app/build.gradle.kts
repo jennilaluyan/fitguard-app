@@ -65,6 +65,8 @@ dependencies {
 
     implementation ("com.android.support:cardview-v7:26.1.0")
 
+    implementation ("com.airbnb.android:lottie:6.0.0")
+
     implementation ("androidx.work:work-runtime-ktx:2.8.1")
 
     implementation ("androidx.databinding:databinding-runtime:7.4.0")

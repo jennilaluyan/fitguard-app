@@ -20,7 +20,9 @@ class InputDataActivity : AppCompatActivity() {
     private lateinit var switchPregnancies: Switch
     private lateinit var editGlucose: EditText
     private lateinit var editBloodPressure: EditText
-    private lateinit var editBirthDate: EditText
+    private lateinit var editDay: EditText
+    private lateinit var editMonth: EditText
+    private lateinit var editYear: EditText
     private lateinit var editWeight: EditText
     private lateinit var editHeight: EditText
     private lateinit var textCalculatedBMI: TextView
@@ -35,7 +37,9 @@ class InputDataActivity : AppCompatActivity() {
         switchPregnancies = findViewById(R.id.switchPregnancies)
         editGlucose = findViewById(R.id.editGlucose)
         editBloodPressure = findViewById(R.id.editBloodPressure)
-        editBirthDate = findViewById(R.id.editBirthDate)
+        editDay = findViewById(R.id.editDay)
+        editMonth = findViewById(R.id.editMonth)
+        editYear = findViewById(R.id.editYear)
         editWeight = findViewById(R.id.editWeight)
         editHeight = findViewById(R.id.editHeight)
         textCalculatedBMI = findViewById(R.id.textCalculatedBMI)
@@ -47,12 +51,14 @@ class InputDataActivity : AppCompatActivity() {
             val pregnancies = if (switchPregnancies.isChecked) 1 else 0
             val glucose = editGlucose.text.toString()
             val bloodPressure = editBloodPressure.text.toString()
-            val birthDate = editBirthDate.text.toString()
+            val day = editDay.text.toString()
+            val month = editMonth.text.toString()
+            val year = editYear.text.toString()
             val weight = editWeight.text.toString()
             val height = editHeight.text.toString()
 
             // Validasi input
-            if (glucose.isEmpty() || bloodPressure.isEmpty() || birthDate.isEmpty() || weight.isEmpty() || height.isEmpty()) {
+            if (glucose.isEmpty() || bloodPressure.isEmpty() || day.isEmpty() || month.isEmpty() || year.isEmpty() || weight.isEmpty() || height.isEmpty()) {
                 Toast.makeText(this, "Harap isi semua kolom", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
@@ -63,6 +69,7 @@ class InputDataActivity : AppCompatActivity() {
                 val bloodPressureValue = bloodPressure.toInt()
                 val weightValue = weight.toFloat()
                 val heightValue = height.toFloat() / 100 // Konversi cm ke meter
+                val birthDate = "$year-$month-$day"
                 val age = calculateAge(birthDate)
 
                 if (age < 0) {

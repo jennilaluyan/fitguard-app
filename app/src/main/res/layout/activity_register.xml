@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:text="Lengkapi dulu data dirimu di bawah ini ya"
         android:textSize="24sp"
-        android:textColor="#333333"
+        android:textColor="#0C4912"
         android:layout_marginBottom="1dp"
         android:textStyle="bold"
         android:gravity="center" />
@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:text="Harap Menggunakan Email Yang Aktif!"
         android:textSize="17sp"
-        android:textColor="#333333"
+        android:textColor="#0C4912"
         android:layout_marginBottom="20dp"
         android:gravity="center" />
 
@@ -35,7 +35,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:boxBackgroundMode="outline"
-        app:boxStrokeColor="#17D970"
+        app:boxStrokeColor="#339B63"
         android:layout_marginBottom="12dp">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -54,7 +54,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:boxBackgroundMode="outline"
-        app:boxStrokeColor="#17D970"
+        app:boxStrokeColor="#339B63"
         android:layout_marginBottom="12dp">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -73,7 +73,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:boxBackgroundMode="outline"
-        app:boxStrokeColor="#17D970"
+        app:boxStrokeColor="#339B63"
         android:layout_marginBottom="16dp">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -93,8 +93,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Daftar"
-        android:textColor="@android:color/black"
-        android:backgroundTint="#D3EE98"
+        android:textColor="@android:color/white"
+        android:backgroundTint="#339B63"
         android:padding="12dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="8dp" />

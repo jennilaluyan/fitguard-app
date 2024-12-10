@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:text="Pantau kesehatan diabetes Anda dengan mudah dan cepat"
         android:textSize="25sp"
-        android:textColor="#333333"
+        android:textColor="#0C4912"
         android:layout_marginBottom="20dp"
         android:textStyle="bold"
         android:gravity="center" />
@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:text="Masukkan data dirimu"
         android:textSize="16sp"
-        android:textColor="#333333"
+        android:textColor="#0C4912"
         android:layout_marginBottom="20dp" />
 
     <!-- Email Field -->
@@ -34,7 +34,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:boxBackgroundMode="outline"
-        app:boxStrokeColor="#3F51B5"
+        app:boxStrokeColor="#339B63"
         android:layout_marginBottom="16dp">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -54,7 +54,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:boxBackgroundMode="outline"
-        app:boxStrokeColor="#3F51B5"
+        app:boxStrokeColor="#339B63"
         android:layout_marginBottom="32dp">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -75,10 +75,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Login"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:alpha="0"
         android:translationY="100dp"
-        android:backgroundTint="#D3EE98"
+        android:backgroundTint="#339B63"
         android:padding="12dp"
         android:layout_marginBottom="16dp"
         android:textSize="18sp" />

@@ -12,16 +12,22 @@
         android:id="@+id/frame_layout"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
-        android:layout_height="680dp" />
+        android:layout_height="match_parent" />
     <!-- BottomNavigationView -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation_view"
         android:layout_width="match_parent"
         android:layout_height="63dp"
         android:layout_gravity="bottom"
-        android:background="@color/bottom_nav_background"
-        app:itemBackground="@drawable/selector_bottom_nav_item_background"
-        app:itemRippleColor="@android:color/transparent"
-        app:menu="@menu/bottom_nav_menu" />
+        android:layout_marginBottom="25dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginEnd="27dp"
+        android:background="@drawable/rounded_bottom_nav"
+        android:paddingStart="15dp"
+    android:paddingEnd="15dp"
+    app:itemRippleColor="@android:color/transparent"
+    app:menu="@menu/bottom_nav_menu" />
+
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

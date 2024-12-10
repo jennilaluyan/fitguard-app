@@ -1,4 +1,7 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Item yang sedang terpilih -->
     <item android:drawable="@drawable/bottom_nav_item_background_circle" android:state_checked="true" />
-    <item android:drawable="@android:color/transparent" />
+
+    <!-- Item yang tidak terpilih -->
+    <item android:drawable="@drawable/bottom_nav_item_background_circle" android:state_checked="false" />
 </selector>
