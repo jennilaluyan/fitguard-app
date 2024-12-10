@@ -3,4 +3,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="bottom_nav_background">#72BF78</color>
+    <color name="ripple_effect">#E0E0E0</color> <!-- Light translucent white -->
+    <color name="primary_light">#FFBB86FC</color> <!-- Example for the oval background -->
+    <color name="bottom_nav_item_color">#7C7C7C</color>
+    <color name="bottom_nav_item_selected_color">#0077B6</color>
 </resources>

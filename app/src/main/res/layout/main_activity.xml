@@ -7,21 +7,28 @@
     android:layout_height="match_parent"
     tools:context=".ui.MainActivity">
 
-    <!-- Container untuk menampilkan Fragment, menggunakan FrameLayout -->
-    <fragment
+    <!-- Fragment Container -->
+    <FrameLayout
         android:id="@+id/frame_layout"
-        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
-        android:layout_height="680dp" />
-    <!-- BottomNavigationView -->
+        android:layout_height="match_parent"
+        android:layout_marginBottom="56dp"/>
+
+    <!-- Bottom Navigation with improved styling -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation_view"
         android:layout_width="match_parent"
-        android:layout_height="63dp"
+        android:layout_height="56dp"
         android:layout_gravity="bottom"
-        android:background="@color/bottom_nav_background"
-        app:itemBackground="@drawable/selector_bottom_nav_item_background"
-        app:itemRippleColor="@android:color/transparent"
-        app:menu="@menu/bottom_nav_menu" />
+        android:background="@drawable/bottom_nav_item_background_circle"
+        app:elevation="8dp"
+        app:itemIconSize="24dp"
+        app:itemRippleColor="@color/ripple_effect"
+        app:labelVisibilityMode="selected"
+        app:menu="@menu/bottom_nav_menu"
+        app:itemPaddingTop="4dp"
+        app:itemPaddingBottom="8dp"
+        app:itemIconTint="@color/bottom_nav_item_color"
+        app:itemTextColor="@color/black"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
