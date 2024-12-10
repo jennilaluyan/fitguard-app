@@ -96,6 +96,9 @@ dependencies {
     implementation(libs.androidx.cardview)
     implementation ("androidx.datastore:datastore-preferences:1.1.1")
     implementation(libs.androidx.datastore.preferences.core.jvm)
+    implementation("com.google.android.material:material:1.9.0")
+    implementation ("com.airbnb.android:lottie:5.2.0")
+
 
     // Test dependencies
     testImplementation(libs.junit)

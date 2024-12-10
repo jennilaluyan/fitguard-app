@@ -1,233 +1,287 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#F9FAFB"
+    android:padding="16dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="@color/white"
-        android:padding="24dp"
-        android:spacing="16dp">
+        android:orientation="vertical">
 
-        <!-- Teks Instruksi -->
+        <!-- Ajakan untuk input -->
         <TextView
-            android:id="@+id/textInfo"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Masukkan data kesehatan Anda untuk membantu memantau kondisi diabetes secara lebih baik."
-            android:textSize="19sp"
+            android:text="Yuk, isi data kesehatanmu biar kita bisa bantu analisis!"
+            android:textSize="20sp"
+            android:textColor="#333333"
             android:textStyle="bold"
-            android:textColor="#0C4912"
-            android:layout_marginBottom="24dp"
-            android:padding="8dp"
-            android:gravity="center"/>
+            android:layout_marginBottom="24dp" />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@android:color/darker_gray"
-            android:layout_marginBottom="16dp"/>
-
-        <!-- Hamil? Input -->
-        <TextView
-            android:id="@+id/textPregnancies"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Apakah Hamil?"
-            android:textSize="18sp"
-            android:textColor="@android:color/black"
-            android:layout_marginBottom="8dp" />
-
-        <Switch
-            android:id="@+id/switchPregnancies"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:thumbTint="@android:color/holo_green_light"
-            android:trackTint="@android:color/holo_green_light"
-            android:textColor="@android:color/black"
-            android:layout_marginBottom="16dp" />
-
-        <!-- Glukosa Input -->
-        <com.google.android.material.textfield.TextInputLayout
+        <!-- Card untuk setiap input -->
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            app:boxBackgroundMode="outline"
-            app:boxStrokeColor="@android:color/darker_gray">
+            app:cardElevation="4dp"
+            app:cardCornerRadius="12dp"
+            android:backgroundTint="#FFFFFF">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/editGlucose"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Masukkan level glukosa"
-                android:inputType="number"
-                android:padding="16dp"
-                android:textColor="@android:color/black" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:orientation="vertical"
+                android:padding="16dp">
 
-        <!-- Tekanan Darah Input -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            app:boxBackgroundMode="outline"
-            app:boxStrokeColor="@android:color/darker_gray">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/editBloodPressure"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Masukkan tekanan darah"
-                android:inputType="number"
-                android:padding="16dp"
-                android:textColor="@android:color/black" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <!-- Umur Input -->
-        <TextView
-            android:id="@+id/textAge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Tanggal Lahir"
-            android:textSize="18sp"
-            android:textColor="@android:color/black"
-            android:layout_marginBottom="8dp" />
-
-        <!-- Tanggal Input -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="16dp">
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:boxBackgroundMode="outline"
-                app:boxStrokeColor="@android:color/darker_gray">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/editDay"
+                <!-- Sudah berapa kali hamil -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sudah berapa kali hamil?"
+                    android:textSize="14sp"
+                    android:textColor="#555555"
+                    android:layout_marginBottom="8dp" />
+                <EditText
+                    android:id="@+id/editPregnancies"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="DD"
+                    android:hint="Masukkan angka"
                     android:inputType="number"
-                    android:maxLength="2"
-                    android:textColor="@android:color/black"
-                    android:padding="16dp"
-                    android:textAlignment="center"/>
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:background="@drawable/bg_edittext"
+                    android:padding="12dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:boxBackgroundMode="outline"
-                app:boxStrokeColor="@android:color/darker_gray">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/editMonth"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="MM"
-                    android:inputType="number"
-                    android:maxLength="2"
-                    android:textColor="@android:color/black"
-                    android:padding="16dp"
-                    android:textAlignment="center"/>
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:boxBackgroundMode="outline"
-                app:boxStrokeColor="@android:color/darker_gray">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/editYear"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="YYYY"
-                    android:inputType="number"
-                    android:maxLength="4"
-                    android:textColor="@android:color/black"
-                    android:padding="16dp"
-                    android:textAlignment="center"/>
-            </com.google.android.material.textfield.TextInputLayout>
-        </LinearLayout>
-
-        <!-- Berat Badan Input -->
-        <com.google.android.material.textfield.TextInputLayout
+        <!-- Glukosa -->
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            app:boxBackgroundMode="outline"
-            app:boxStrokeColor="@android:color/darker_gray">
+            app:cardElevation="4dp"
+            app:cardCornerRadius="12dp"
+            android:backgroundTint="#FFFFFF">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/editWeight"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Masukkan berat badan"
-                android:inputType="numberDecimal"
-                android:padding="16dp"
-                android:textColor="@android:color/black"/>
-        </com.google.android.material.textfield.TextInputLayout>
+                android:orientation="vertical"
+                android:padding="16dp">
 
-        <!-- Tinggi Badan Input -->
-        <com.google.android.material.textfield.TextInputLayout
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Level Glukosa"
+                    android:textSize="14sp"
+                    android:textColor="#555555"
+                    android:layout_marginBottom="8dp" />
+                <EditText
+                    android:id="@+id/editGlucose"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Masukkan angka"
+                    android:inputType="number"
+                    android:background="@drawable/bg_edittext"
+                    android:padding="12dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Tekanan Darah -->
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            app:boxBackgroundMode="outline"
-            app:boxStrokeColor="@android:color/darker_gray">
+            app:cardElevation="4dp"
+            app:cardCornerRadius="12dp"
+            android:backgroundTint="#FFFFFF">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/editHeight"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Masukkan tinggi badan"
-                android:inputType="numberDecimal"
-                android:padding="16dp"
-                android:textColor="@android:color/black"/>
-        </com.google.android.material.textfield.TextInputLayout>
+                android:orientation="vertical"
+                android:padding="16dp">
 
-        <!-- BMI (Readonly) -->
-        <TextView
-            android:id="@+id/textBMI"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="BMI"
-            android:textSize="18sp"
-            android:textColor="@android:color/black"
-            android:layout_marginBottom="8dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tekanan Darah (format: 120 / 80)"
+                    android:textSize="14sp"
+                    android:textColor="#555555"
+                    android:layout_marginBottom="8dp" />
+                <EditText
+                    android:id="@+id/editBloodPressure"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Masukkan tekanan darah"
+                    android:inputType="text"
+                    android:background="@drawable/bg_edittext"
+                    android:padding="12dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
 
-        <TextView
-            android:id="@+id/textCalculatedBMI"
+        <!-- Tanggal Lahir -->
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="BMI akan dihitung secara otomatis"
-            android:textSize="18sp"
-            android:textColor="@android:color/black"
-            android:layout_marginBottom="24dp"
-            android:paddingTop="8dp" />
+            android:layout_marginBottom="16dp"
+            app:cardElevation="4dp"
+            app:cardCornerRadius="12dp"
+            android:backgroundTint="#FFFFFF">
 
-        <!-- Submit Button -->
-        <com.google.android.material.button.MaterialButton
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Label -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tanggal Lahir"
+                    android:textSize="16sp"
+                    android:textColor="#555555"
+                    android:layout_marginBottom="8dp" />
+
+                <!-- Button Pilih Tanggal -->
+                <Button
+                    android:id="@+id/buttonPickBirthDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pilih Tanggal"
+                    android:backgroundTint="#17D970"
+                    android:textColor="@android:color/white"
+                    android:visibility="visible" />
+
+                <!-- Tanggal Terpilih -->
+                <TextView
+                    android:id="@+id/textBirthDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tanggal belum dipilih"
+                    android:paddingTop="12dp"
+                    android:textSize="20sp"
+                    android:textColor="#333333"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Berat Badan -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardElevation="4dp"
+            app:cardCornerRadius="12dp"
+            android:backgroundTint="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Berat Badan (kg)"
+                    android:textSize="14sp"
+                    android:textColor="#555555"
+                    android:layout_marginBottom="8dp" />
+                <EditText
+                    android:id="@+id/editWeight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Masukkan berat badan"
+                    android:inputType="numberDecimal"
+                    android:background="@drawable/bg_edittext"
+                    android:padding="12dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Tinggi Badan -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardElevation="4dp"
+            app:cardCornerRadius="12dp"
+            android:backgroundTint="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tinggi Badan (cm)"
+                    android:textSize="14sp"
+                    android:textColor="#555555"
+                    android:layout_marginBottom="8dp" />
+                <EditText
+                    android:id="@+id/editHeight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Masukkan tinggi badan"
+                    android:inputType="numberDecimal"
+                    android:background="@drawable/bg_edittext"
+                    android:padding="12dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- BMI -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardElevation="4dp"
+            app:cardCornerRadius="12dp"
+            android:backgroundTint="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Label -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hasil BMI"
+                    android:textSize="18sp"
+                    android:textColor="#555555"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp" />
+
+                <!-- Hasil BMI -->
+                <TextView
+                    android:id="@+id/textCalculatedBMI"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Hasil akan muncul di sini"
+                    android:textSize="22sp"
+                    android:textColor="#17D970"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_marginTop="16dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Tombol Submit -->
+        <Button
             android:id="@+id/buttonSubmit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:text="Submit"
-            android:backgroundTint="#339B63"
+            android:backgroundTint="#17D970"
             android:textColor="@android:color/white"
-            android:padding="16dp"
-            android:layout_marginTop="24dp"
-            app:cornerRadius="8dp" />
+            android:padding="12dp" />
     </LinearLayout>
-</androidx.core.widget.NestedScrollView>
+</ScrollView>

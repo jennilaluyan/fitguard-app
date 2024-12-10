@@ -35,7 +35,7 @@
                 android:layout_marginBottom="16dp" />
 
             <!-- CardView: Example -->
-            <androidx.cardview.widget.CardView
+            <com.google.android.material.card.MaterialCardView
                 android:id="@+id/metforminCardView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -85,7 +85,7 @@
                         android:textSize="14sp"
                         android:textColor="#666666" />
                 </LinearLayout>
-            </androidx.cardview.widget.CardView>
+            </com.google.android.material.card.MaterialCardView>
 
             <!-- Tambahkan CardView lainnya dengan struktur serupa -->
         </LinearLayout>

@@ -9,6 +9,7 @@ import com.dicodingg.bangkit.R
 import com.dicodingg.bangkit.data.factory.PrefViewModelFactory
 import com.dicodingg.bangkit.databinding.FragmentDashboardBinding
 import com.dicodingg.bangkit.ui.HealthRecordActivity
+import com.dicodingg.bangkit.ui.InputDataActivity
 import com.dicodingg.bangkit.ui.MedicationReminderActivity
 import com.dicodingg.bangkit.ui.NutritionTrackerActivity
 import com.dicodingg.bangkit.ui.PhysicalActivityActivity
