@@ -7,4 +7,13 @@
     <color name="primary_light">#FFBB86FC</color> <!-- Example for the oval background -->
     <color name="bottom_nav_item_color">#7C7C7C</color>
     <color name="bottom_nav_item_selected_color">#0077B6</color>
+
+    <!-- Warna untuk kategori BMI -->
+    <color name="blue">#2196F3</color> <!-- Underweight -->
+    <color name="green">#4CAF50</color> <!-- Normal -->
+    <color name="orange">#FF9800</color> <!-- Overweight -->
+    <color name="red">#F44336</color> <!-- Obese -->
+    <color name="gray">#BDBDBD</color> <!-- Default -->
+
+    <color name="gray_light">#F5F5F5</color>
 </resources>
