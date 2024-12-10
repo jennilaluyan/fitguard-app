@@ -37,7 +37,7 @@ class DashboardFragment : Fragment(R.layout.fragment_dashboard) {
         val firstName = email?.substringBefore("@")?.filter { it.isLetter() } ?: "User"
 
         // Menampilkan pesan selamat datang dengan nama pertama di TextView dengan ID tv_welcome
-        binding.tvWelcome.text = "Welcome, $firstName"
+        binding.tvWelcome.text = "Halo, $firstName"
 
         // Setting click listeners using ViewBinding untuk berpindah ke halaman yang sesuai
         binding.healthRecordCard.setOnClickListener {
@@ -65,25 +65,6 @@ class DashboardFragment : Fragment(R.layout.fragment_dashboard) {
         binding.waterTrackerCard.setOnClickListener {
             val intent = Intent(requireContext(), WaterTrackerActivity::class.java)
             startActivity(intent)
-        }
-
-
-
-
-        // Menangani klik untuk rekomendasi lainnya
-        binding.foodRecommendationCard.setOnClickListener {
-            Toast.makeText(requireContext(), "Food Recommendation selected", Toast.LENGTH_SHORT).show()
-            // Menangani navigasi atau aksi untuk rekomendasi makanan
-        }
-
-        binding.physicalActivitiesRecommendationCard.setOnClickListener {
-            Toast.makeText(requireContext(), "Physical Activities Recommendation selected", Toast.LENGTH_SHORT).show()
-            // Menangani navigasi atau aksi untuk rekomendasi aktivitas fisik
-        }
-
-        binding.regularBedtimeRecommendationCard.setOnClickListener {
-            Toast.makeText(requireContext(), "Regular Bedtime Recommendation selected", Toast.LENGTH_SHORT).show()
-            // Menangani navigasi atau aksi untuk rekomendasi waktu tidur teratur
         }
 
         return binding.root

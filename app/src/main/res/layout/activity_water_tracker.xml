@@ -1,226 +1,156 @@
 <layout
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
         <!-- Variabel binding opsional -->
     </data>
 
-<RelativeLayout
-
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#FFFFFF">
-
-    <!-- Header Section -->
     <RelativeLayout
-        android:id="@+id/header"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#72BF78"
-        android:padding="16dp">
-
-        <ImageView
-            android:id="@+id/back_button"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/ic_back"
-            android:layout_alignParentStart="true"
-            android:contentDescription="Back" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:text="Water Tracker"
-            android:textColor="@android:color/white"
-            android:textSize="22sp"
-            android:textStyle="bold" />
-    </RelativeLayout>
-
-    <!-- Scrollable Content -->
-    <ScrollView
-        android:id="@+id/scroll_view"
-        android:layout_below="@id/header"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="16dp">
+        android:background="#FFFFFF">
 
-        <LinearLayout
+        <!-- Header Section -->
+        <RelativeLayout
+            android:id="@+id/header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center">
+            android:background="#72BF78"
+            android:padding="16dp">
 
-            <!-- Arc Progress Indicator with reduced margin -->
             <ImageView
-                android:id="@+id/arc_indicator"
-                android:layout_width="300dp"
-                android:layout_height="300dp"
-                android:src="@drawable/ic_circular_progress_blue"
-                android:layout_gravity="center"
-                android:layout_marginTop="50dp" />
+                android:id="@+id/back_button"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_back"
+                android:layout_alignParentStart="true"
+                android:contentDescription="Back" />
 
-            <!-- Enlarged Water Consumption Image -->
-            <ImageView
-                android:layout_width="250dp"
-                android:layout_height="250dp"
-                android:src="@drawable/ic_water_tracker_illustration"
-                android:layout_gravity="center"
-                android:contentDescription="Water Consumption"
-                android:layout_marginTop="-260dp"
-                android:layout_marginBottom="10dp"/>
-
-            <!-- Total Consumption Text -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="900/1200 ml"
-                android:textSize="40sp"
-                android:textColor="#000000"
-                android:layout_gravity="center"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="16dp"
+                android:layout_centerHorizontal="true"
+                android:text="Asupan Air Minum"
+                android:textColor="@android:color/white"
+                android:textSize="22sp"
                 android:textStyle="bold" />
+        </RelativeLayout>
 
-            <!-- Divider Line -->
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#cccccc"
-                android:layout_marginBottom="16dp" />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/header"
+            android:padding="16dp">
 
-            <!-- Water Consumption Records -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:gravity="center">
 
-                <!-- Single Record Item -->
+                <!-- Progress Circle Container -->
+                <FrameLayout
+                    android:layout_width="310dp"
+                    android:layout_height="310dp">
+
+                    <com.google.android.material.progressindicator.CircularProgressIndicator
+                        android:id="@+id/arc_indicator"
+                        android:layout_width="300dp"
+                        android:layout_height="300dp"
+                        app:indicatorSize="300dp"
+                        app:trackThickness="12dp"
+                        app:indicatorColor="#72BF78"
+                        app:trackColor="#E0E0E0"
+                        android:progress="0"/>
+
+                    <!-- Total Consumption (Centered in Circle) -->
+                    <TextView
+                        android:id="@+id/total_consumption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0/2000 ml"
+                        android:textSize="32sp"
+                        android:textColor="#000000"
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="50dp"/>
+                </FrameLayout>
+
+                <!-- Water Drop Animation Container -->
+                <FrameLayout
+                    android:id="@+id/splash_animation"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="-240dp"
+                    android:visibility="invisible">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_water_drop"
+                        app:tint="#72BF78"/>
+                </FrameLayout>
+
+                <!-- Glass Note -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cat: 1 gelas = 250 ml"
+                    android:textSize="14sp"
+                    android:textColor="#666666"
+                    android:layout_marginTop="50dp" />
+
+                <!-- Quick Add Buttons -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:padding="8dp"
-                    android:gravity="center_vertical">
+                    android:gravity="center"
+                    android:layout_marginTop="70dp">
 
-                    <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:src="@drawable/ic_time"
-                        android:contentDescription="Time" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="12:30"
-                        android:textColor="#000000"
-                        android:paddingStart="8dp"
-                        android:textSize="16sp" />
-
-                    <TextView
+                    <Button
+                        android:id="@+id/add_small_glass"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="200 ml"
-                        android:textColor="#000000"
-                        android:textSize="16sp" />
+                        android:text="250ml"
+                        android:layout_margin="8dp"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+
+                    <Button
+                        android:id="@+id/add_medium_glass"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="600ml"
+                        android:layout_margin="8dp"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+
+                    <Button
+                        android:id="@+id/add_custom"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Custom"
+                        android:layout_margin="8dp"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
                 </LinearLayout>
 
-                <!-- Additional records can be added here similarly -->
-                <LinearLayout
+                <!-- History Section -->
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="8dp"
-                    android:gravity="center_vertical">
-
-                    <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:src="@drawable/ic_glass"
-                        android:contentDescription="Water Glass" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="09:30"
-                        android:textColor="#000000"
-                        android:paddingStart="8dp"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="100 ml"
-                        android:textColor="#000000"
-                        android:textSize="16sp" />
-                </LinearLayout>
+                    android:text="Catatan Penggunaan Air"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginBottom="8dp" />
 
                 <LinearLayout
+                    android:id="@+id/water_records_list"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="8dp"
-                    android:gravity="center_vertical">
+                    android:orientation="vertical" />
 
-                    <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:src="@drawable/ic_glass"
-                        android:contentDescription="Water Glass" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="09:30"
-                        android:textColor="#000000"
-                        android:paddingStart="8dp"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="100 ml"
-                        android:textColor="#000000"
-                        android:textSize="16sp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="8dp"
-                    android:gravity="center_vertical">
-
-                    <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:src="@drawable/ic_glass"
-                        android:contentDescription="Water Glass" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="09:30"
-                        android:textColor="#000000"
-                        android:paddingStart="8dp"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="100 ml"
-                        android:textColor="#000000"
-                        android:textSize="16sp" />
-                </LinearLayout>
-
-                <!-- Repeat as necessary for other records -->
             </LinearLayout>
-        </LinearLayout>
-    </ScrollView>
-
-</RelativeLayout>
+        </ScrollView>
+    </RelativeLayout>
 </layout>

@@ -39,12 +39,6 @@ class NutritionTrackerActivity : AppCompatActivity() {
 
         setupPieChart()
 
-        // Set up current date
-        updateDateDisplay("Today")
-
-        // Set up time period buttons
-        setupTimePeriodButtons()
-
         // Set up the back button
         binding.backButton.setOnClickListener {
             onBackPressedDispatcher.onBackPressed()
@@ -112,131 +106,15 @@ class NutritionTrackerActivity : AppCompatActivity() {
 
         binding.nutritionChart.apply {
             data = pieData
-            centerText = "Target\n1000 Cal\n\nConsumed\n${totalConsumed.toInt()} Cal"
+            centerText = "Target\n1000 Cal\n\nKonsumsi\n${totalConsumed.toInt()} cal"
             highlightValues(null)
             invalidate()
-        }
-    }
-
-    private fun setupTimePeriodButtons() {
-        binding.todayButton.setOnClickListener {
-            updateButtonStates(it)
-            nutritionViewModel.setTimePeriod("Today")
-            updateDateDisplay("Today")
-            binding.datePrevButton.visibility = View.GONE
-            binding.dateNextButton.visibility = View.GONE
-            enableMealBoxes(true)
-        }
-
-        binding.weekButton.setOnClickListener {
-            updateButtonStates(it)
-            nutritionViewModel.setTimePeriod("Week")
-            updateDateDisplay("Week")
-            binding.datePrevButton.visibility = View.VISIBLE
-            binding.dateNextButton.visibility = View.VISIBLE
-            enableMealBoxes(false)
-            updateWeeklyData()
-        }
-
-        binding.monthButton.setOnClickListener {
-            updateButtonStates(it)
-            nutritionViewModel.setTimePeriod("Month")
-            updateDateDisplay("Month")
-            binding.datePrevButton.visibility = View.VISIBLE
-            binding.dateNextButton.visibility = View.VISIBLE
-            enableMealBoxes(false)
-            updateMonthlyData()
-        }
-
-        binding.datePrevButton.setOnClickListener {
-            when (nutritionViewModel.selectedPeriod.value) {
-                "Week" -> {
-                    currentWeekOffset--
-                    updateDateDisplay("Week")
-                    updateWeeklyData()
-                }
-                "Month" -> {
-                    currentMonthOffset--
-                    updateDateDisplay("Month")
-                    updateMonthlyData()
-                }
-            }
-        }
-
-        binding.dateNextButton.setOnClickListener {
-            when (nutritionViewModel.selectedPeriod.value) {
-                "Week" -> {
-                    currentWeekOffset++
-                    updateDateDisplay("Week")
-                    updateWeeklyData()
-                }
-                "Month" -> {
-                    currentMonthOffset++
-                    updateDateDisplay("Month")
-                    updateMonthlyData()
-                }
-            }
-        }
-    }
-
-    private fun updateButtonStates(selectedButton: View) {
-        // Reset all buttons
-        binding.todayButton.setBackgroundColor(Color.WHITE)
-        binding.weekButton.setBackgroundColor(Color.WHITE)
-        binding.monthButton.setBackgroundColor(Color.WHITE)
-
-        binding.todayButton.setTextColor(Color.parseColor("#72BF78"))
-        binding.weekButton.setTextColor(Color.parseColor("#72BF78"))
-        binding.monthButton.setTextColor(Color.parseColor("#72BF78"))
-
-        // Update selected button
-        when (selectedButton.id) {
-            R.id.today_button -> {
-                binding.todayButton.setBackgroundColor(Color.parseColor("#72BF78"))
-                binding.todayButton.setTextColor(Color.WHITE)
-            }
-            R.id.week_button -> {
-                binding.weekButton.setBackgroundColor(Color.parseColor("#72BF78"))
-                binding.weekButton.setTextColor(Color.WHITE)
-            }
-            R.id.month_button -> {
-                binding.monthButton.setBackgroundColor(Color.parseColor("#72BF78"))
-                binding.monthButton.setTextColor(Color.WHITE)
-            }
-        }
-    }
-
-    private fun updateDateDisplay(period: String) {
-        val calendar = Calendar.getInstance()
-
-        when (period) {
-            "Today" -> {
-                val dateFormat = SimpleDateFormat("EEEE, MMMM d, yyyy", Locale.getDefault())
-                binding.currentDate.text = dateFormat.format(calendar.time)
-            }
-            "Week" -> {
-                calendar.add(Calendar.WEEK_OF_YEAR, currentWeekOffset)
-                calendar.set(Calendar.DAY_OF_WEEK, calendar.firstDayOfWeek)
-                val weekStart = calendar.time
-                calendar.add(Calendar.DAY_OF_WEEK, 6)
-                val weekEnd = calendar.time
-
-                val startFormat = SimpleDateFormat("d", Locale.getDefault())
-                val endFormat = SimpleDateFormat("d MMMM yyyy", Locale.getDefault())
-                binding.currentDate.text = "${startFormat.format(weekStart)}-${endFormat.format(weekEnd)}"
-            }
-            "Month" -> {
-                calendar.add(Calendar.MONTH, currentMonthOffset)
-                val monthFormat = SimpleDateFormat("MMMM yyyy", Locale.getDefault())
-                binding.currentDate.text = monthFormat.format(calendar.time)
-            }
         }
     }
 
     private fun enableMealBoxes(enabled: Boolean) {
         binding.breakfastLayout.isClickable = enabled
         binding.lunchLayout.isClickable = enabled
-        binding.waterLayout.isClickable = enabled
         binding.dinnerLayout.isClickable = enabled
     }
 
@@ -269,10 +147,6 @@ class NutritionTrackerActivity : AppCompatActivity() {
             navigateToAddMealActivity("Lunch")
         }
 
-        binding.waterLayout.setOnClickListener {
-            navigateToAddMealActivity("Water")
-        }
-
         binding.dinnerLayout.setOnClickListener {
             navigateToAddMealActivity("Dinner")
         }
@@ -294,10 +168,6 @@ class NutritionTrackerActivity : AppCompatActivity() {
             meals["Lunch"]?.let { meal ->
                 binding.lunchCalories.text = getString(R.string.calories_format, meal.calories)
                 binding.lunchDescription.text =  meal.foodName
-            }
-            meals["Water"]?.let { meal ->
-                binding.waterAmount.text = getString(R.string.water_format, meal.calories)
-                binding.waterDescription.text =  meal.foodName
             }
             meals["Dinner"]?.let { meal ->
                 binding.dinnerCalories.text = getString(R.string.calories_format, meal.calories)
