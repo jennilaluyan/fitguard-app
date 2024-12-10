@@ -12,7 +12,9 @@
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="16dp">
+            android:padding="16dp"
+            android:clipToPadding="false"
+            android:fitsSystemWindows="true">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -221,102 +223,6 @@
                     </LinearLayout>
 
                 </GridLayout>
-
-                <!-- Recommendations Section -->
-                <TextView
-                    android:id="@+id/tv_recommendations"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Recommendations"
-                    android:textColor="#000"
-                    android:textSize="22sp"
-                    android:textStyle="bold" />
-
-                <!-- Divider Line -->
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#ccc"
-                    android:layout_marginVertical="18dp" />
-
-                <!-- First Recommendation: Food Recommendation -->
-                <LinearLayout
-                    android:id="@+id/foodRecommendationCard"
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:orientation="horizontal"
-                    android:padding="12dp"
-                    android:background="@drawable/bg_recommendation_card"
-                    android:layout_marginBottom="8dp"
-                    android:gravity="center_vertical">
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="55dp"
-                        android:src="@drawable/ic_food_recommendation"
-                        android:layout_marginEnd="4dp" />
-                    <TextView
-                        android:id="@+id/foodRecommendationText"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:text="Food Recommendations"
-                        android:textColor="#fff"
-                        android:textSize="19sp"
-                        android:gravity="center_vertical"
-                        android:textStyle="bold"/>
-                </LinearLayout>
-
-                <!-- Second Recommendation: Physical Activities -->
-                <LinearLayout
-                    android:id="@+id/physicalActivitiesRecommendationCard"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="12dp"
-                    android:background="@drawable/bg_recommendation_card"
-                    android:layout_marginBottom="8dp"
-                    android:gravity="center_vertical">
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="55dp"
-                        android:src="@drawable/ic_physical_activities_you_can_do" />
-                    <TextView
-                        android:id="@+id/physicalActivitiesText"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:text="Physical activities you can do"
-                        android:textColor="#fff"
-                        android:textSize="19sp"
-                        android:gravity="center_vertical"
-                        android:textStyle="bold"/>
-                </LinearLayout>
-
-                <!-- Third Recommendation: Regular Bedtime -->
-                <LinearLayout
-                    android:id="@+id/regularBedtimeRecommendationCard"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="12dp"
-                    android:background="@drawable/bg_recommendation_card"
-                    android:layout_marginBottom="8dp"
-                    android:gravity="center_vertical">
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="50dp"
-                        android:src="@drawable/ic_regular_bedtime" />
-                    <TextView
-                        android:id="@+id/regularBedtimeText"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:text="Regular Bedtime"
-                        android:textColor="#fff"
-                        android:textSize="19sp"
-                        android:gravity="center_vertical"
-                        android:textStyle="bold"/>
-                </LinearLayout>
 
                 <FrameLayout
                     android:id="@+id/fragment_container"
