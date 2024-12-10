@@ -9,38 +9,42 @@
     android:gravity="center"
     android:background="#F5F5F5">
 
+    <!-- Title -->
     <TextView
         android:id="@+id/textViewTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Pantau kesehatan diabetes Anda dengan mudah dan cepat"
-        android:textSize="25sp"
-        android:textColor="#0C4912"
-        android:layout_marginBottom="20dp"
+        android:text="Masuk dulu, yuk!"
+        android:textSize="26sp"
+        android:textColor="#333333"
+        android:layout_marginBottom="12dp"
         android:textStyle="bold"
         android:gravity="center" />
 
+    <!-- Subtitle -->
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+        android:id="@+id/textViewSubtitle"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Masukkan data dirimu"
+        android:text="Akses fitur FitGuard dan pantau kesehatanmu!"
         android:textSize="16sp"
-        android:textColor="#0C4912"
-        android:layout_marginBottom="20dp" />
+        android:textColor="#555555"
+        android:layout_marginBottom="20dp"
+        android:gravity="center" />
 
     <!-- Email Field -->
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:boxBackgroundMode="outline"
-        app:boxStrokeColor="#339B63"
+        app:boxStrokeColor="#72BF78"
         android:layout_marginBottom="16dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editTextEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="Masukkan Email Anda"
             android:drawableStart="@drawable/baseline_email_24"
             android:drawablePadding="8dp"
             android:padding="12dp"
@@ -54,13 +58,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:boxBackgroundMode="outline"
-        app:boxStrokeColor="#339B63"
+        app:boxStrokeColor="#72BF78"
         android:layout_marginBottom="32dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editTextPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="Masukkan Kata Sandi"
             android:drawableStart="@drawable/baseline_lock_24"
             android:drawablePadding="8dp"
             android:padding="12dp"
@@ -69,40 +74,49 @@
             android:textSize="16sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- Tombol Login -->
+    <!-- Login Button -->
     <Button
         android:id="@+id/buttonLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Login"
-        android:textColor="@color/white"
-        android:alpha="0"
-        android:translationY="100dp"
-        android:backgroundTint="#339B63"
+        android:text="Masuk"
+        android:textColor="#ffffff"
+        android:backgroundTint="#72BF78"
+        android:elevation="4dp"
         android:padding="12dp"
         android:layout_marginBottom="16dp"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
-    <!-- Link ke Registrasi -->
+    <!-- Link to Register -->
     <TextView
         android:id="@+id/textViewRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Belum punya akun? Daftar sekarang"
-        android:textColor="#7A662E"
+        android:textColor="#5555AA"
         android:layout_marginTop="16dp"
-        android:alpha="0"
-        android:translationY="100dp"
         android:textSize="14sp"
-        android:gravity="center" />
+        android:gravity="center"
+        android:layout_marginBottom="20dp" />
 
-    <!-- Fragment Container -->
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragment_container"
+    <!-- Decorative Line -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#CCCCCC"
+        android:layout_marginBottom="20dp" />
+
+    <!-- Additional Info Text -->
+    <TextView
+        android:id="@+id/textViewInfo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        app:defaultNavHost="true"
-        android:layout_marginBottom="16dp" />
+        android:text="Kami melindungi privasi Anda dengan baik. Data Anda akan digunakan untuk meningkatkan pengalaman Anda di FitGuard."
+        android:textSize="12sp"
+        android:textColor="#777777"
+        android:gravity="center"
+        android:paddingHorizontal="16dp"
+        android:lineSpacingExtra="4dp" />
 
 </LinearLayout>
