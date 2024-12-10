@@ -12,9 +12,9 @@
         android:id="@+id/textViewTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Verifikasi Email"
+        android:text="Verifikasi Email !"
         android:textSize="24sp"
-        android:textColor="#000000"
+        android:textColor="#0C4912"
         android:layout_marginBottom="20dp"/>
 
     <!-- Pesan Konfirmasi Pengiriman Email -->
@@ -22,8 +22,9 @@
         android:id="@+id/textViewMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Kami sudah kirim tautan verifikasi ke email kamu. Cek inbox kamu ya buat lanjut daftar!"        android:textSize="16sp"
-        android:textColor="#555555"
+        android:text="Tautan verifikasi telah dikirim ke email Anda. Silakan periksa inbox Anda untuk melanjutkan proses pendaftaran."
+        android:textSize="16sp"
+        android:textColor="#135419"
         android:layout_marginBottom="20dp"
         android:padding="16dp"/>
 
@@ -33,7 +34,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:indeterminate="true"
-        android:visibility="visible" />
+        android:visibility="visible"
+        android:indeterminateTint="#339B63" />
+
 
     <!-- Pesan yang Menyatakan Proses Verifikasi Sedang Berlangsung -->
     <TextView
@@ -42,7 +45,7 @@
         android:layout_height="wrap_content"
         android:text="Menunggu verifikasi email..."
         android:textSize="16sp"
-        android:textColor="#555555"
+        android:textColor="#135419"
         android:layout_marginTop="20dp"/>
 
     <!-- Pesan yang Menginformasikan Pengguna jika Email Tidak Diterima -->
@@ -54,8 +57,8 @@
         android:layout_height="wrap_content"
         android:text="Kirim Ulang Email Verifikasi"
         android:layout_marginTop="20dp"
-        android:backgroundTint="#D3EE98"
-        android:textColor="@color/black"/>
+        android:backgroundTint="#339B63"
+        android:textColor="@color/white"/>
 
     <!-- Tombol untuk Kembali ke Halaman Login -->
 

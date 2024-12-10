@@ -4,6 +4,8 @@ import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -40,6 +42,9 @@ class RegisterActivity : AppCompatActivity() {
 
         // Start animations
         animateViews()
+
+        // Call validate inputs method
+        validateInputs()
 
         buttonRegister.setOnClickListener {
             val email = editTextEmail.text.toString().trim()
@@ -92,7 +97,7 @@ class RegisterActivity : AppCompatActivity() {
         val emailFadeIn = ObjectAnimator.ofFloat(editTextEmail, "alpha", 0f, 1f)
 
         val emailAnimation = AnimatorSet().apply {
-            playTogether(emailFadeIn,)
+            playTogether(emailFadeIn)
             duration = 1000
         }
 
@@ -100,14 +105,14 @@ class RegisterActivity : AppCompatActivity() {
         val passwordFadeIn = ObjectAnimator.ofFloat(editTextPassword, "alpha", 0f, 1f)
 
         val passwordAnimation = AnimatorSet().apply {
-            playTogether(passwordFadeIn,)
+            playTogether(passwordFadeIn)
             duration = 1000
         }
 
         // Animasi untuk confirm password field
         val confirmPasswordFadeIn = ObjectAnimator.ofFloat(editTextConfirmPassword, "alpha", 0f, 1f)
         val confirmPasswordAnimation = AnimatorSet().apply {
-            playTogether(confirmPasswordFadeIn, )
+            playTogether(confirmPasswordFadeIn)
             duration = 1000
         }
 
@@ -124,5 +129,50 @@ class RegisterActivity : AppCompatActivity() {
             playSequentially(emailAnimation, passwordAnimation, confirmPasswordAnimation, buttonRegisterAnimation)
             start()
         }
+    }
+
+    private fun validateInputs() {
+        // Email validation
+        editTextEmail.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(charSequence: CharSequence?, start: Int, count: Int, after: Int) {}
+
+            override fun onTextChanged(charSequence: CharSequence?, start: Int, before: Int, count: Int) {
+                val email = editTextEmail.text.toString().trim()
+                if (email.isNotEmpty() && !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                    editTextEmail.error = "Email tidak valid"
+                }
+            }
+
+            override fun afterTextChanged(editable: Editable?) {}
+        })
+
+        // Password validation
+        editTextPassword.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(charSequence: CharSequence?, start: Int, count: Int, after: Int) {}
+
+            override fun onTextChanged(charSequence: CharSequence?, start: Int, before: Int, count: Int) {
+                val password = editTextPassword.text.toString().trim()
+                if (password.length < 6) {
+                    editTextPassword.error = "Password harus lebih dari 6 karakter"
+                }
+            }
+
+            override fun afterTextChanged(editable: Editable?) {}
+        })
+
+        // Confirm Password validation
+        editTextConfirmPassword.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(charSequence: CharSequence?, start: Int, count: Int, after: Int) {}
+
+            override fun onTextChanged(charSequence: CharSequence?, start: Int, before: Int, count: Int) {
+                val confirmPassword = editTextConfirmPassword.text.toString().trim()
+                val password = editTextPassword.text.toString().trim()
+                if (confirmPassword.isNotEmpty() && confirmPassword != password) {
+                    editTextConfirmPassword.error = "Kata sandi tidak cocok"
+                }
+            }
+
+            override fun afterTextChanged(editable: Editable?) {}
+        })
     }
 }

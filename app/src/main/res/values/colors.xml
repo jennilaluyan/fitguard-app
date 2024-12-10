@@ -16,4 +16,9 @@
     <color name="gray">#BDBDBD</color> <!-- Default -->
 
     <color name="gray_light">#F5F5F5</color>
+    <color name="nav_item_icon_tint">#339B63</color> <!-- Warna ikon -->
+    <color name="nav_item_text_color">#339B63</color> <!-- Warna teks -->
+    <color name="gray">#D3D3D3</color> <!-- Warna abu-abu -->
+
+    <color name="nav_item_selected_background">#E5F6EB</color> <!-- Warna latar belakang item yang dipilih -->
 </resources>

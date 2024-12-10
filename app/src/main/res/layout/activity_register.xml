@@ -9,26 +9,24 @@
     android:padding="16dp"
     android:background="#F5F5F5">
 
-    <!-- Title -->
     <TextView
         android:id="@+id/textViewTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Buat akunmu sekarang, yuk!"
-        android:textSize="26sp"
-        android:textColor="#333333"
-        android:layout_marginBottom="8dp"
+        android:text="Lengkapi dulu data dirimu di bawah ini ya"
+        android:textSize="24sp"
+        android:textColor="#0C4912"
+        android:layout_marginBottom="1dp"
         android:textStyle="bold"
         android:gravity="center" />
 
-    <!-- Description -->
     <TextView
         android:id="@+id/textViewDesc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Gunakan email aktif dan kata sandi yang aman ya."
-        android:textSize="15sp"
-        android:textColor="#333333"
+        android:text="Harap Menggunakan Email Yang Aktif!"
+        android:textSize="17sp"
+        android:textColor="#0C4912"
         android:layout_marginBottom="20dp"
         android:gravity="center" />
 
@@ -37,14 +35,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:boxBackgroundMode="outline"
-        app:boxStrokeColor="#17D970"
+        app:boxStrokeColor="#339B63"
         android:layout_marginBottom="12dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editTextEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Masukkan Email"
             android:drawableStart="@drawable/baseline_email_24"
             android:drawablePadding="8dp"
             android:inputType="textEmailAddress"
@@ -52,19 +49,18 @@
             android:padding="12dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- Password Field -->
+    <!-- Kata Sandi Field -->
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:boxBackgroundMode="outline"
-        app:boxStrokeColor="#17D970"
+        app:boxStrokeColor="#339B63"
         android:layout_marginBottom="12dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editTextPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Masukkan Kata Sandi"
             android:drawableStart="@drawable/baseline_lock_24"
             android:drawablePadding="8dp"
             android:inputType="textPassword"
@@ -72,19 +68,18 @@
             android:padding="12dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- Confirm Password Field -->
+    <!-- Konfirmasi Kata Sandi Field -->
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:boxBackgroundMode="outline"
-        app:boxStrokeColor="#17D970"
+        app:boxStrokeColor="#339B63"
         android:layout_marginBottom="16dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editTextConfirmPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Konfirmasi Kata Sandi"
             android:drawableStart="@drawable/baseline_lock_24"
             android:drawablePadding="8dp"
             android:inputType="textPassword"
@@ -92,14 +87,14 @@
             android:padding="12dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- Register Button -->
+    <!-- Daftar Button -->
     <Button
         android:id="@+id/buttonRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Daftar"
-        android:textColor="@android:color/black"
-        android:backgroundTint="#D3EE98"
+        android:textColor="@android:color/white"
+        android:backgroundTint="#339B63"
         android:padding="12dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="8dp" />

@@ -26,7 +26,7 @@ class ProfileFragment : Fragment() {
         val rootView = inflater.inflate(R.layout.fragment_profil, container, false)
 
         // Initializing UI components
-        val imageView2: ImageView = rootView.findViewById(R.id.imageView2)
+        val imageViewProfile: ImageView = rootView.findViewById(R.id.imageViewProfile)
         val textView: TextView = rootView.findViewById(R.id.textView)
         val textView2: TextView = rootView.findViewById(R.id.textView2)
 
@@ -37,7 +37,14 @@ class ProfileFragment : Fragment() {
 
         // Set the profile details (you can set dynamic data here, e.g., from a ViewModel)
         textView.text = "Lion Fischer"
-        textView2.text = "lionfischer@gmail.com"
+
+        // Get the current user's email from Firebase Authentication
+        val user = FirebaseAuth.getInstance().currentUser
+        if (user != null) {
+            textView2.text = user.email // Display the email of the logged-in user
+        } else {
+            textView2.text = "Not logged in"
+        }
 
         // Button1 click listener to select a profile picture
         button1.setOnClickListener {
@@ -77,7 +84,7 @@ class ProfileFragment : Fragment() {
 
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == Activity.RESULT_OK && data != null) {
             val selectedImageUri = data.data
-            val imageView2: ImageView = view?.findViewById(R.id.imageView2)!!
+            val imageView2: ImageView = view?.findViewById(R.id.imageViewProfile)!!
 
             // Set the selected image as the new profile picture and apply 'centerCrop' to ensure it remains circular or squared.
             imageView2.setImageURI(selectedImageUri)
