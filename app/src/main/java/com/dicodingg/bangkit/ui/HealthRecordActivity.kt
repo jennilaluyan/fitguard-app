@@ -21,16 +21,21 @@ class HealthRecordActivity : AppCompatActivity() {
         }
 
         // Handle add data button click
+// Handle add data button click
         binding.addDataButton.setOnClickListener {
             val dialog = AddDataDialogFragment { dataType, dataValue, date ->
                 when (dataType) {
-                    "Glucose Levels" -> {
+                    "Tingkat Glukosa" -> {
                         binding.glucoseCard.findViewById<TextView>(R.id.glucoseValue).text = dataValue
                         binding.glucoseCard.findViewById<TextView>(R.id.glucoseDate).text = date
                     }
-                    "Blood Pressure" -> {
+                    "Tekanan Darah" -> {
                         binding.bloodPressureCard.findViewById<TextView>(R.id.bloodPressureValue).text = dataValue
                         binding.bloodPressureCard.findViewById<TextView>(R.id.bloodPressureDate).text = date
+                    }
+                    "Dosis Insulin" -> { // Note the exact match with strings.xml
+                        binding.insulinDoseCard.findViewById<TextView>(R.id.insulinDoseValue).text = dataValue
+                        binding.insulinDoseCard.findViewById<TextView>(R.id.insulinDoseDate).text = date
                     }
                 }
             }

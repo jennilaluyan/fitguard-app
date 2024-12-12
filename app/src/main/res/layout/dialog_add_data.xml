@@ -7,22 +7,24 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="#E8F5E9">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add Data"
-        android:textSize="20sp"
-        android:textStyle="bold"
+        android:layout_gravity="center"
         android:gravity="center"
-        android:layout_gravity="center" />
+        android:text="Tambah Data"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <!-- Data Type Spinner -->
     <Spinner
         android:id="@+id/dataTypeSpinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10sp"
         android:entries="@array/data_type_options" />
 
     <!-- Custom Data Type Input (hidden initially) -->
@@ -43,7 +45,7 @@
         android:id="@+id/dataValueInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter value"
+        android:hint="Masukkan nilai"
         android:inputType="text"
         android:layout_marginTop="16dp" />
 
@@ -52,9 +54,9 @@
         android:id="@+id/datePickerButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Select Date"
+        android:text="Pilih tanggal"
         android:layout_marginTop="16dp"
-        android:backgroundTint="#72BF78"
+        android:backgroundTint="@color/blue"
         android:textColor="#FFFFFF" />
 
     <!-- Action Buttons -->
@@ -68,14 +70,16 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Add" />
+            android:backgroundTint="#72BF78"
+            android:text="Tambah" />
 
         <Button
             android:id="@+id/cancelButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Cancel" />
+            android:backgroundTint="#F44336"
+            android:text="Batal" />
     </LinearLayout>
 </LinearLayout>
 </layout>

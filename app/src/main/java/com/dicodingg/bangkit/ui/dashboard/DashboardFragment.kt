@@ -13,6 +13,8 @@ import com.dicodingg.bangkit.ui.NutritionTrackerActivity
 import com.dicodingg.bangkit.ui.PhysicalActivityActivity
 import com.dicodingg.bangkit.ui.WaterTrackerActivity
 import com.google.firebase.auth.FirebaseAuth
+import java.text.SimpleDateFormat
+import java.util.*
 
 class DashboardFragment : Fragment(R.layout.fragment_dashboard) {
 
@@ -30,41 +32,51 @@ class DashboardFragment : Fragment(R.layout.fragment_dashboard) {
     ): android.view.View? {
         _binding = FragmentDashboardBinding.inflate(inflater, container, false)
 
-        // Mendapatkan nama pertama dari email pengguna dan memfilter hanya huruf
+        // Set current date
+        updateCurrentDate()
+
+        // Get user's first name from email
         val user = FirebaseAuth.getInstance().currentUser
         val email = user?.email
         val firstName = email?.substringBefore("@")?.filter { it.isLetter() } ?: "User"
 
-        // Menampilkan pesan selamat datang dengan nama pertama di TextView dengan ID tv_welcome
         binding.tvWelcome.text = "Halo, $firstName"
 
-        // Setting click listeners using ViewBinding untuk berpindah ke halaman yang sesuai
-        binding.healthRecordCard.setOnClickListener {
-            val intent = Intent(requireContext(), HealthRecordActivity::class.java)
-            startActivity(intent)
-        }
-
-        binding.nutritionTrackerCard.setOnClickListener {
-            val intent = Intent(requireContext(), NutritionTrackerActivity::class.java)
-            startActivity(intent)
-        }
-
-        binding.medicationReminderCard.setOnClickListener {
-            val intent = Intent(requireContext(), MedicationReminderActivity::class.java)
-            startActivity(intent)
-        }
-
-        binding.physicalActivityCard.setOnClickListener {
-            val intent = Intent(requireContext(), PhysicalActivityActivity::class.java)
-            startActivity(intent)
-        }
-
-        binding.waterTrackerCard.setOnClickListener {
-            val intent = Intent(requireContext(), WaterTrackerActivity::class.java)
-            startActivity(intent)
-        }
+        // Setup click listeners
+        setupClickListeners()
 
         return binding.root
+    }
+
+    private fun updateCurrentDate() {
+        val calendar = Calendar.getInstance()
+        val dateFormat = SimpleDateFormat("EEEE, dd MMM", Locale("id", "ID"))
+        val currentDate = dateFormat.format(calendar.time)
+        binding.tvDate.text = currentDate
+    }
+
+    private fun setupClickListeners() {
+        binding.apply {
+            healthRecordCard.setOnClickListener {
+                startActivity(Intent(requireContext(), HealthRecordActivity::class.java))
+            }
+
+            nutritionTrackerCard.setOnClickListener {
+                startActivity(Intent(requireContext(), NutritionTrackerActivity::class.java))
+            }
+
+            medicationReminderCard.setOnClickListener {
+                startActivity(Intent(requireContext(), MedicationReminderActivity::class.java))
+            }
+
+            physicalActivityCard.setOnClickListener {
+                startActivity(Intent(requireContext(), PhysicalActivityActivity::class.java))
+            }
+
+            waterTrackerCard.setOnClickListener {
+                startActivity(Intent(requireContext(), WaterTrackerActivity::class.java))
+            }
+        }
     }
 
     override fun onDestroyView() {

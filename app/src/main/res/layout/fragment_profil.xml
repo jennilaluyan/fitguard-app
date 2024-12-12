@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ececec">
+    android:background="#E8F5E9">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -49,7 +49,8 @@
                 android:textStyle="bold"
                 app:layout_constraintTop_toBottomOf="@id/imageViewProfile"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textColor="@color/black"/>
 
             <!-- Profile Email -->
             <TextView
@@ -61,7 +62,8 @@
                 android:textSize="16sp"
                 app:layout_constraintTop_toBottomOf="@id/textView"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textColor="@color/black"/>
 
             <!-- Buttons -->
             <LinearLayout
@@ -85,7 +87,8 @@
                     android:paddingStart="20dp"
                     android:paddingEnd="20dp"
                     android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:textColor="@color/black"/>
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/button2"
@@ -99,7 +102,8 @@
                     android:paddingEnd="20dp"
                     android:text="Pengaturan Akun"
                     android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:textColor="@color/black"/>
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/button4"
@@ -113,7 +117,8 @@
                     android:paddingEnd="20dp"
                     android:text="Notifikasi"
                     android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:textColor="@color/black"/>
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/button5"

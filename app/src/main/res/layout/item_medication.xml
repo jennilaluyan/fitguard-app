@@ -6,13 +6,15 @@
     android:layout_height="wrap_content"
     android:layout_marginBottom="8dp"
     app:cardCornerRadius="8dp"
-    app:cardElevation="4dp">
+    app:cardElevation="4dp"
+    app:cardBackgroundColor="@android:color/white">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:padding="16dp"
+        android:background="@android:color/white">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -20,7 +22,6 @@
             android:orientation="horizontal"
             android:gravity="center_vertical">
 
-            <!-- Medication Image -->
             <ImageView
                 android:id="@+id/image_medicine"
                 android:layout_width="50dp"
@@ -28,14 +29,12 @@
                 android:src="@drawable/ic_medicine"
                 android:layout_marginEnd="16dp" />
 
-            <!-- Medication Information -->
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:orientation="vertical">
 
-                <!-- Medication Name -->
                 <TextView
                     android:id="@+id/text_nama_obat"
                     android:layout_width="wrap_content"
@@ -43,62 +42,55 @@
                     android:text="Nama Obat"
                     android:textSize="18sp"
                     android:textStyle="bold"
-                    android:textColor="#333333" />
+                    android:textColor="@android:color/black" />
 
-                <!-- Medication Dose and Type (dosis + jenis obat) in one line -->
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:gravity="start|center_vertical">
 
-                    <!-- Dosis -->
                     <TextView
                         android:id="@+id/text_dosis"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Dosis"
                         android:textSize="14sp"
-                        android:textColor="#666666" />
+                        android:textColor="#424242" />
 
-                    <!-- Medication Type -->
                     <TextView
                         android:id="@+id/text_jenis_obat"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Jenis Obat"
                         android:textSize="14sp"
-                        android:textColor="#666666"
+                        android:textColor="#424242"
                         android:layout_marginStart="8dp" />
                 </LinearLayout>
 
-                <!-- Frequency -->
                 <TextView
                     android:id="@+id/text_frekuensi"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Frekuensi"
                     android:textSize="14sp"
-                    android:textColor="#666666" />
+                    android:textColor="#424242" />
 
-                <!-- Time -->
                 <TextView
                     android:id="@+id/text_waktu"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Waktu"
                     android:textSize="14sp"
-                    android:textColor="#666666" />
+                    android:textColor="#424242" />
             </LinearLayout>
 
-            <!-- Edit and Delete Buttons -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="end">
 
-                <!-- Delete Button -->
                 <ImageButton
                     android:id="@+id/button_delete"
                     android:layout_width="40dp"

@@ -26,7 +26,8 @@
                 android:layout_height="24dp"
                 android:layout_alignParentStart="true"
                 android:contentDescription="Back"
-                android:src="@drawable/ic_back" />
+                android:src="@drawable/ic_back"
+                android:layout_marginTop="5dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -65,9 +66,9 @@
                     android:layout_marginTop="16dp"
                     android:orientation="vertical">
 
-                    <!-- Breakfast Item -->
+                    <!-- Sarapan Item -->
                     <LinearLayout
-                        android:id="@+id/breakfast_layout"
+                        android:id="@+id/Sarapan_layout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginVertical="4dp"
@@ -79,7 +80,7 @@
                             android:layout_width="40dp"
                             android:layout_height="40dp"
                             android:layout_gravity="center"
-                            android:contentDescription="Breakfast Icon"
+                            android:contentDescription="Sarapan Icon"
                             android:src="@drawable/ic_breakfast" />
 
                         <LinearLayout
@@ -98,7 +99,7 @@
                                 android:textStyle="bold" />
 
                             <TextView
-                                android:id="@+id/breakfast_description"
+                                android:id="@+id/Sarapan_description"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Nama makanan"
@@ -107,7 +108,7 @@
                         </LinearLayout>
 
                         <TextView
-                            android:id="@+id/breakfast_calories"
+                            android:id="@+id/Sarapan_calories"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="0 cal"
@@ -116,9 +117,9 @@
                             android:textStyle="bold" />
                     </LinearLayout>
 
-                    <!-- Lunch Item -->
+                    <!-- Makan Siang Item -->
                     <LinearLayout
-                        android:id="@+id/lunch_layout"
+                        android:id="@+id/MakanSiang_layout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginVertical="4dp"
@@ -130,7 +131,7 @@
                             android:layout_width="40dp"
                             android:layout_height="40dp"
                             android:layout_gravity="center"
-                            android:contentDescription="Lunch Icon"
+                            android:contentDescription="Makan Siang Icon"
                             android:src="@drawable/ic_lunch" />
 
                         <LinearLayout
@@ -149,7 +150,7 @@
                                 android:textStyle="bold" />
 
                             <TextView
-                                android:id="@+id/lunch_description"
+                                android:id="@+id/MakanSiang_description"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Nama makanan"
@@ -158,7 +159,7 @@
                         </LinearLayout>
 
                         <TextView
-                            android:id="@+id/lunch_calories"
+                            android:id="@+id/MakanSiang_calories"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="0 cal"
@@ -167,9 +168,9 @@
                             android:textStyle="bold" />
                     </LinearLayout>
 
-                    <!-- Dinner Item -->
+                    <!-- Makan Malam Item -->
                     <LinearLayout
-                        android:id="@+id/dinner_layout"
+                        android:id="@+id/MakanMalam_layout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginVertical="4dp"
@@ -181,7 +182,7 @@
                             android:layout_width="40dp"
                             android:layout_height="40dp"
                             android:layout_gravity="center"
-                            android:contentDescription="Dinner Icon"
+                            android:contentDescription="Makan Malam Icon"
                             android:src="@drawable/ic_dinner" />
 
                         <LinearLayout
@@ -200,7 +201,7 @@
                                 android:textStyle="bold" />
 
                             <TextView
-                                android:id="@+id/dinner_description"
+                                android:id="@+id/MakanMalam_description"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Nama makanan"
@@ -209,7 +210,7 @@
                         </LinearLayout>
 
                         <TextView
-                            android:id="@+id/dinner_calories"
+                            android:id="@+id/MakanMalam_calories"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="0 cal"

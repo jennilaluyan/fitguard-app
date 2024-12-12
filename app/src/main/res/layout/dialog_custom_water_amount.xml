@@ -3,12 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="24dp">
+    android:padding="24dp"
+    android:background="#E8F5E9">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add Custom Amount"
+        android:text="Tambah Jumlah Kustom"
         android:textSize="20sp"
         android:textStyle="bold"
         android:textColor="#000000" />
@@ -16,7 +17,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Enter the amount of water in milliliters (ml)"
+        android:text="Masukkan jumlah air dalam mililiter (ml)"
         android:textSize="14sp"
         android:layout_marginTop="8dp"
         android:textColor="#666666" />
@@ -30,7 +31,7 @@
             android:id="@+id/custom_amount_edittext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Amount (ml)"
+            android:hint="Jumlah (ml)"
             android:inputType="number" />
 
     </com.google.android.material.textfield.TextInputLayout>

@@ -21,6 +21,6 @@
 
     <color name="nav_item_selected_background">#E5F6EB</color> <!-- Warna latar belakang item yang dipilih -->
 
-    <color name="time_chip_default">#E0F7FA</color>
-    <color name="time_chip_selected">#339B63</color>
+    <color name="time_chip_default">#A0D683</color>
+    <color name="time_chip_selected">#A0D683</color>
 </resources>

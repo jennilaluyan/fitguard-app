@@ -23,7 +23,8 @@
                 android:layout_height="24dp"
                 android:src="@drawable/ic_back"
                 android:layout_alignParentStart="true"
-                android:contentDescription="Back" />
+                android:contentDescription="Back"
+                android:layout_marginTop="5sp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -73,7 +74,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Tanggal: N/A"
-                        android:layout_marginTop="4dp" />
+                        android:layout_marginTop="4dp"
+                        android:textColor="@color/black"/>
 
                     <FrameLayout
                         android:layout_width="wrap_content"
@@ -133,6 +135,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Tanggal: N/A"
+                        android:textColor="@color/black"
                         android:layout_marginTop="4dp" />
                 </LinearLayout>
 
@@ -169,6 +172,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Tanggal: N/A"
+                        android:textColor="@color/black"
                         android:layout_marginTop="4dp" />
                 </LinearLayout>
 
