@@ -12,7 +12,7 @@
         android:id="@+id/textViewTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Verifikasi Email !"
+        android:text="Verifikasi Email!"
         android:textSize="24sp"
         android:textColor="#0C4912"
         android:layout_marginBottom="20dp"/>
@@ -22,8 +22,7 @@
         android:id="@+id/textViewMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tautan verifikasi telah dikirim ke email Anda. Silakan periksa inbox Anda untuk melanjutkan proses pendaftaran."
-        android:textSize="16sp"
+        android:text="Kami sudah mengirim tautan verifikasi ke email kamu. Yuk, cek inbox kamu untuk melanjutkan pendaftaran."        android:textSize="16sp"
         android:textColor="#135419"
         android:layout_marginBottom="20dp"
         android:padding="16dp"/>

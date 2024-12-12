@@ -31,7 +31,6 @@ class ProfileFragment : Fragment() {
         val textView2: TextView = rootView.findViewById(R.id.textView2)
 
         val button1: AppCompatButton = rootView.findViewById(R.id.button1)
-        val button2: AppCompatButton = rootView.findViewById(R.id.button2)
         val button4: AppCompatButton = rootView.findViewById(R.id.button4)
         val button5: AppCompatButton = rootView.findViewById(R.id.button5) // Logout button
 
@@ -49,12 +48,6 @@ class ProfileFragment : Fragment() {
         // Button1 click listener to select a profile picture
         button1.setOnClickListener {
             openGallery()
-        }
-
-        // Button2 click listener to navigate to SettingsActivity
-        button2.setOnClickListener {
-            val intent = Intent(requireContext(), SettingsActivity::class.java)
-            startActivity(intent)
         }
 
         // Button4 click listener to navigate to NotificationActivity
