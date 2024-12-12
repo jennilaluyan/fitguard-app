@@ -1,5 +1,6 @@
 package com.dicodingg.bangkit.ui
 
+import android.R
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -32,8 +33,8 @@ class AddMealActivity : AppCompatActivity() {
             "Sarapan", "Makan Siang", "Makan Malam" -> arrayOf("Porsi", "Piring", "Mangkuk")
             else -> arrayOf("Serving")
         }
-        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, portionTypes)
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        val adapter = ArrayAdapter(this, R.layout.simple_spinner_item, portionTypes)
+        adapter.setDropDownViewResource(R.layout.simple_spinner_dropdown_item)
         binding.portionTypeSpinner.adapter = adapter
 
         // Set up add button

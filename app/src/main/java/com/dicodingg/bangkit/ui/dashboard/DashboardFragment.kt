@@ -2,15 +2,13 @@ package com.dicodingg.bangkit.ui.dashboard
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.dicodingg.bangkit.R
 import com.dicodingg.bangkit.data.factory.PrefViewModelFactory
 import com.dicodingg.bangkit.databinding.FragmentDashboardBinding
 import com.dicodingg.bangkit.ui.HealthRecordActivity
-import com.dicodingg.bangkit.ui.InputDataActivity
-import com.dicodingg.bangkit.ui.MedicationReminderActivity
+import com.dicodingg.bangkit.ui.medication.MedicationReminderActivity
 import com.dicodingg.bangkit.ui.NutritionTrackerActivity
 import com.dicodingg.bangkit.ui.PhysicalActivityActivity
 import com.dicodingg.bangkit.ui.WaterTrackerActivity
@@ -46,12 +44,10 @@ class DashboardFragment : Fragment(R.layout.fragment_dashboard) {
             startActivity(intent)
         }
 
-
         binding.nutritionTrackerCard.setOnClickListener {
             val intent = Intent(requireContext(), NutritionTrackerActivity::class.java)
             startActivity(intent)
         }
-
 
         binding.medicationReminderCard.setOnClickListener {
             val intent = Intent(requireContext(), MedicationReminderActivity::class.java)
