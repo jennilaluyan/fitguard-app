@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">FitGuard</string>
     <string-array name="data_type_options">
-        <item>Glucose Levels</item>
-        <item>Blood Pressure</item>
+        <item>Tingkat Glukosa</item>
+        <item>Tekanan Darah</item>
+        <item>Dosis Insulin</item>
     </string-array>
-    <string name="calories_format">%d Kcal</string>
-    <string name="water_format">%d Ml</string>
+    <string name="calories_format">%d cal</string>
     <string name="nutrition_chart_center_text">Target\n1000 Cal\n\nConsumed\n%d Cal</string>
     <string name="water_consumption_format">%1$d/%2$d ml</string>
     <string name="water_amount_format">%1$d ml</string>

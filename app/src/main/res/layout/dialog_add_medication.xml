@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="#E8F5E9">
 
     <TextView
         android:layout_width="match_parent"
@@ -148,6 +149,7 @@
             app:chipIcon="@drawable/ic_time"
             style="@style/Widget.MaterialComponents.Chip.Choice"
             android:text="07:00"
+            android:textColor="@color/black"
             app:chipBackgroundColor="@drawable/time_chip_background"/>
     </LinearLayout>
 
@@ -156,6 +158,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Simpan"
-        android:background="#72BF78"
+        style="@style/Widget.MaterialComponents.Button"
+        app:backgroundTint="#72BF78"
         android:textColor="@android:color/white" />
 </LinearLayout>

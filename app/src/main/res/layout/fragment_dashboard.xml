@@ -29,7 +29,7 @@
                     android:layout_height="wrap_content"
                     android:text="Jumat, 19 Jul"
                     android:textColor="#333"
-                    android:textSize="14sp"
+                    android:textSize="12sp"
                     android:layout_marginLeft="13dp"/>
 
                 <!-- Profile Section -->
@@ -61,7 +61,7 @@
                             android:layout_height="wrap_content"
                             android:text="Halo, Jenn!"
                             android:textColor="#000"
-                            android:textSize="29sp"
+                            android:textSize="26sp"
                             android:textStyle="bold"
                             android:paddingTop="4dp" />
 
@@ -71,7 +71,7 @@
                             android:layout_height="wrap_content"
                             android:text="Hidup teratur, tubuh tangguh."
                             android:textColor="#777"
-                            android:textSize="14sp"
+                            android:textSize="12sp"
                             android:paddingTop="2dp" />
                     </LinearLayout>
                 </LinearLayout>
@@ -111,7 +111,7 @@
                             android:layout_height="wrap_content"
                             android:text="Catatan Kesehatan"
                             android:textStyle="bold"
-                            android:textSize="25sp"
+                            android:textSize="23sp"
                             android:textColor="#fff"
                             android:gravity="center"
                             android:paddingTop="8dp" />
@@ -137,7 +137,7 @@
                             android:layout_height="wrap_content"
                             android:text="Pemantau Nutrisi"
                             android:textStyle="bold"
-                            android:textSize="25sp"
+                            android:textSize="23sp"
                             android:textColor="#fff"
                             android:gravity="center"
                             android:paddingTop="8dp" />
@@ -163,7 +163,7 @@
                             android:layout_height="wrap_content"
                             android:text="Aktivitas Fisik"
                             android:textStyle="bold"
-                            android:textSize="25sp"
+                            android:textSize="23sp"
                             android:textColor="#fff"
                             android:gravity="center"
                             android:paddingTop="8dp" />
@@ -187,9 +187,9 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Asupan Air Minum"
+                            android:text="Asupan Mineral"
                             android:textStyle="bold"
-                            android:textSize="25sp"
+                            android:textSize="23sp"
                             android:textColor="#fff"
                             android:gravity="center"
                             android:paddingTop="8dp" />
@@ -216,7 +216,7 @@
                             android:layout_height="wrap_content"
                             android:text="Jadwal Obat"
                             android:textStyle="bold"
-                            android:textSize="25sp"
+                            android:textSize="23sp"
                             android:textColor="#fff"
                             android:gravity="center"
                             android:paddingTop="8dp" />
