@@ -24,7 +24,7 @@
                 android:layout_height="24dp"
                 android:src="@drawable/ic_back"
                 android:contentDescription="Kembali"
-                android:layout_marginTop="5sp"/>
+                android:layout_marginTop="6sp"/>
 
             <TextView
                 android:layout_width="wrap_content"

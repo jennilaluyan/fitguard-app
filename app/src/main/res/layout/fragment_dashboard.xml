@@ -1,18 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white">
-
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <!-- Scrollable Content -->
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="16dp"
             android:clipToPadding="false"
             android:fitsSystemWindows="true">
 
@@ -20,7 +19,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="16dp">
+                android:paddingHorizontal="24dp"
+                android:paddingVertical="16dp">
 
                 <!-- Date Text -->
                 <TextView
@@ -28,61 +28,59 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Jumat, 19 Jul"
-                    android:textColor="#333"
-                    android:textSize="12sp"
-                    android:layout_marginLeft="13dp"/>
+                    android:textColor="#6A6A6A"
+                    android:textSize="12sp"/>
 
-                <!-- Profile Section -->
-                <LinearLayout
+                <!-- Profile Section with Rounded Card -->
+                <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="8dp"
-                    android:gravity="center_vertical"
-                    android:layout_marginBottom="16dp">
-
-                    <ImageView
-                        android:id="@+id/profileImageView"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:src="@drawable/ic_profile_pic"
-                        android:contentDescription="Profile Picture"
-                        android:layout_marginEnd="12dp"
-                        android:scaleType="centerCrop" />
+                    android:layout_marginTop="16dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="4dp"
+                    app:cardBackgroundColor="#FFFFFF">
 
                     <LinearLayout
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:orientation="horizontal"
+                        android:padding="16dp"
+                        android:gravity="center_vertical">
 
-                        <TextView
-                            android:id="@+id/tv_welcome"
+                        <ImageView
+                            android:id="@+id/profileImageView"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:src="@drawable/ic_profile_pic"
+                            android:layout_marginEnd="16dp"
+                            android:scaleType="centerCrop"/>
+
+                        <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Halo, Jenn!"
-                            android:textColor="#000"
-                            android:textSize="26sp"
-                            android:textStyle="bold"
-                            android:paddingTop="4dp" />
+                            android:orientation="vertical">
 
-                        <TextView
-                            android:id="@+id/tv_motivation"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Hidup teratur, tubuh tangguh."
-                            android:textColor="#777"
-                            android:textSize="12sp"
-                            android:paddingTop="2dp" />
+                            <TextView
+                                android:id="@+id/tv_welcome"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Halo, Jenn!"
+                                android:textColor="#2C3E50"
+                                android:textSize="24sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tv_motivation"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Hidup teratur, tubuh tangguh."
+                                android:textColor="#7F8C8D"
+                                android:textSize="12sp"/>
+                        </LinearLayout>
                     </LinearLayout>
-                </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
-                <!-- Divider Line -->
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#ccc"
-                    android:layout_marginVertical="8dp" />
-
+                <!-- Feature Grid with Enhanced Cards -->
                 <!-- Grid Section for Feature Cards -->
                 <GridLayout
                     android:layout_width="match_parent"
@@ -111,7 +109,7 @@
                             android:layout_height="wrap_content"
                             android:text="Catatan Kesehatan"
                             android:textStyle="bold"
-                            android:textSize="23sp"
+                            android:textSize="17sp"
                             android:textColor="#fff"
                             android:gravity="center"
                             android:paddingTop="8dp" />
@@ -137,7 +135,7 @@
                             android:layout_height="wrap_content"
                             android:text="Pemantau Nutrisi"
                             android:textStyle="bold"
-                            android:textSize="23sp"
+                            android:textSize="17sp"
                             android:textColor="#fff"
                             android:gravity="center"
                             android:paddingTop="8dp" />
@@ -163,7 +161,7 @@
                             android:layout_height="wrap_content"
                             android:text="Aktivitas Fisik"
                             android:textStyle="bold"
-                            android:textSize="23sp"
+                            android:textSize="17sp"
                             android:textColor="#fff"
                             android:gravity="center"
                             android:paddingTop="8dp" />
@@ -187,9 +185,9 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Asupan Mineral"
+                            android:text="Asupan Air"
                             android:textStyle="bold"
-                            android:textSize="23sp"
+                            android:textSize="17sp"
                             android:textColor="#fff"
                             android:gravity="center"
                             android:paddingTop="8dp" />
@@ -216,7 +214,7 @@
                             android:layout_height="wrap_content"
                             android:text="Jadwal Obat"
                             android:textStyle="bold"
-                            android:textSize="23sp"
+                            android:textSize="17sp"
                             android:textColor="#fff"
                             android:gravity="center"
                             android:paddingTop="8dp" />
@@ -224,16 +222,14 @@
 
                 </GridLayout>
 
+                <!-- Fragment Container -->
                 <FrameLayout
                     android:id="@+id/fragment_container"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginBottom="20dp" />
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"/>
             </LinearLayout>
         </ScrollView>
-
-        <!-- Bottom Navigation -->
-
     </RelativeLayout>
 </FrameLayout>

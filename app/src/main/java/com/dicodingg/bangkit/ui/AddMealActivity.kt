@@ -9,6 +9,9 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.dicodingg.bangkit.databinding.ActivityAddMealBinding
 import com.dicodingg.bangkit.viewmodel.ViewModelProvider
+import android.graphics.Color
+import android.widget.TextView
+import android.widget.AdapterView
 
 class AddMealActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAddMealBinding
@@ -54,6 +57,13 @@ class AddMealActivity : AppCompatActivity() {
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, portionTypes)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         binding.portionTypeSpinner.adapter = adapter
+
+        binding.portionTypeSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                (view as? TextView)?.setTextColor(Color.BLACK)
+            }
+            override fun onNothingSelected(parent: AdapterView<*>?) {}
+        }
     }
 
     private fun setupListeners() {

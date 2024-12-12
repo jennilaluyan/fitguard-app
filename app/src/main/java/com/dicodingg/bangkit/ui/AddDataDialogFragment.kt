@@ -1,6 +1,7 @@
 package com.dicodingg.bangkit.ui
 
 import android.app.DatePickerDialog
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +9,7 @@ import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 import com.dicodingg.bangkit.databinding.DialogAddDataBinding
@@ -41,6 +43,7 @@ class AddDataDialogFragment(
         binding.dataTypeSpinner.adapter = adapter
         binding.dataTypeSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                (view as? TextView)?.setTextColor(Color.BLACK)
             }
             override fun onNothingSelected(parent: AdapterView<*>?) {
             }
@@ -70,16 +73,10 @@ class AddDataDialogFragment(
         binding.addButton.setOnClickListener {
             val selectedType = binding.dataTypeSpinner.selectedItem.toString()
             val dataValue = binding.dataValueInput.text.toString().trim()
-            val customType = binding.customDataTypeInput.text.toString().trim()
 
             if (dataValue.isNotEmpty() && selectedDate.isNotEmpty()) {
-                val finalType = if (selectedType == "Others") customType else selectedType
-                if (finalType.isEmpty() && selectedType == "Others") {
-                    Toast.makeText(requireContext(), "Please specify the data type", Toast.LENGTH_SHORT).show()
-                } else {
-                    onDataSubmitted(finalType, dataValue, selectedDate)
-                    dismiss()
-                }
+                onDataSubmitted(selectedType, dataValue, selectedDate)
+                dismiss()
             } else {
                 Toast.makeText(requireContext(), "All fields are required", Toast.LENGTH_SHORT).show()
             }

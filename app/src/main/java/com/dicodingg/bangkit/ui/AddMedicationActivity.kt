@@ -9,7 +9,11 @@ import com.dicodingg.bangkit.R
 import com.dicodingg.bangkit.databinding.DialogAddMedicationBinding
 import com.dicodingg.bangkit.ui.medication.Medication
 import com.dicodingg.bangkit.ui.medication.MedicationViewModel
-import com.dicodingg.bangkit.data.notification.NotificationUtils // <-- Ensure this import is here
+import com.dicodingg.bangkit.data.notification.NotificationUtils
+import android.graphics.Color
+import android.view.View
+import android.widget.TextView
+import android.widget.AdapterView
 
 class AddMedicationActivity : AppCompatActivity() {
 
@@ -27,6 +31,14 @@ class AddMedicationActivity : AppCompatActivity() {
         val frequencyAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, frequencyOptions)
         frequencyAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         binding.frequencySpinner.adapter = frequencyAdapter
+
+        // Set spinner text color
+        binding.frequencySpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                (view as? TextView)?.setTextColor(Color.BLACK)
+            }
+            override fun onNothingSelected(parent: AdapterView<*>?) {}
+        }
 
         binding.saveButton.setOnClickListener {
             saveMedication()

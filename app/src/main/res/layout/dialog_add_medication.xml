@@ -15,34 +15,41 @@
         android:textSize="20sp"
         android:textStyle="bold"
         android:textAlignment="center"
-        android:layout_marginBottom="16dp" />
+        android:layout_marginBottom="16dp"
+        android:textColor="@color/black"/>
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:textColorHint="@color/black"
+        android:backgroundTint="@color/black">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edit_nama_obat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Nama Obat"
-            android:inputType="text" />
+            android:inputType="text"
+            android:textColor="@color/black"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:textColorHint="@color/black"
+        android:backgroundTint="@color/black">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edit_dosis"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Dosis"
-            android:inputType="number" />
+            android:inputType="number"
+            android:textColor="@color/black"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <RadioGroup
@@ -57,21 +64,27 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Tablet" />
+            android:text="Tablet"
+            android:textColor="@color/black"
+            android:buttonTint="@color/black"/>
 
         <RadioButton
             android:id="@+id/dosage_spoon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Sendok" />
+            android:text="Sendok"
+            android:textColor="@color/black"
+            android:buttonTint="@color/black"/>
 
         <RadioButton
             android:id="@+id/dosage_drops"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Tetes" />
+            android:text="Tetes"
+            android:textColor="@color/black"
+            android:buttonTint="@color/black"/>
     </RadioGroup>
 
     <RadioGroup
@@ -86,32 +99,39 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Sebelum Makan" />
+            android:text="Sebelum Makan"
+            android:textColor="@color/black"
+            android:buttonTint="@color/black"/>
 
         <RadioButton
             android:id="@+id/during_meal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Saat Makan" />
+            android:text="Saat Makan"
+            android:textColor="@color/black"
+            android:buttonTint="@color/black"/>
 
         <RadioButton
             android:id="@+id/after_meal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Setelah Makan" />
+            android:text="Setelah Makan"
+            android:textColor="@color/black"
+            android:buttonTint="@color/black"/>
     </RadioGroup>
 
-    <!-- Frequency Spinner -->
     <Spinner
         android:id="@+id/frequency_spinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:prompt="@string/frekuensi_prompt" />
+        android:prompt="@string/frekuensi_prompt"
+        android:popupBackground="@color/black"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/black"/>
 
-    <!-- New Time Selection Container -->
     <LinearLayout
         android:id="@+id/time_selection_container"
         android:layout_width="match_parent"
@@ -124,7 +144,8 @@
             android:layout_height="wrap_content"
             android:text="Pilih Waktu Minum Obat"
             android:textStyle="bold"
-            android:layout_marginBottom="8dp"/>
+            android:layout_marginBottom="8dp"
+            android:textColor="@color/black"/>
 
         <LinearLayout
             android:id="@+id/time_slots_container"
@@ -133,7 +154,6 @@
             android:orientation="vertical"/>
     </LinearLayout>
 
-    <!-- Time Slot Template (will be inflated dynamically) -->
     <LinearLayout
         android:id="@+id/time_slot_template"
         android:layout_width="match_parent"
@@ -149,8 +169,7 @@
             app:chipIcon="@drawable/ic_time"
             style="@style/Widget.MaterialComponents.Chip.Choice"
             android:text="07:00"
-            android:textColor="@color/black"
-            app:chipBackgroundColor="@drawable/time_chip_background"/>
+            android:textColor="@color/black"/>
     </LinearLayout>
 
     <Button

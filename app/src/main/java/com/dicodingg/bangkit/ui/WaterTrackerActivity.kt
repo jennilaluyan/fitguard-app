@@ -1,5 +1,6 @@
 package com.dicodingg.bangkit.ui
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
@@ -128,11 +129,19 @@ class WaterTrackerActivity : AppCompatActivity() {
                 false
             )
 
-            recordView.findViewById<TextView>(android.R.id.text1).text =
-                SimpleDateFormat("HH:mm", Locale.getDefault())
+            val text1 = recordView.findViewById<TextView>(android.R.id.text1)
+            val text2 = recordView.findViewById<TextView>(android.R.id.text2)
+
+            text1.apply {
+                text = SimpleDateFormat("HH:mm", Locale.getDefault())
                     .format(Date(intake.timestamp))
-            recordView.findViewById<TextView>(android.R.id.text2).text =
-                getString(R.string.water_amount_format, intake.amount)
+                setTextColor(Color.BLACK)
+            }
+
+            text2.apply {
+                text = getString(R.string.water_amount_format, intake.amount)
+                setTextColor(Color.BLACK)
+            }
 
             binding.waterRecordsList.addView(recordView)
         }

@@ -52,13 +52,15 @@
             android:padding="12dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- Password Field -->
+    <!-- Password Field with visibility toggle -->
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:boxBackgroundMode="outline"
-        app:boxStrokeColor="#17D970"
-        android:layout_marginBottom="12dp">
+        app:boxStrokeColor="#72BF78"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="#72BF78"
+        android:layout_marginBottom="16dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editTextPassword"
@@ -67,18 +69,21 @@
             android:hint="Masukkan Kata Sandi"
             android:drawableStart="@drawable/baseline_lock_24"
             android:drawablePadding="8dp"
+            android:padding="12dp"
             android:inputType="textPassword"
-            android:textColor="#000000"
-            android:padding="12dp" />
+            android:textColor="#333333"
+            android:textSize="16sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- Confirm Password Field -->
+    <!-- Confirm Password Field with visibility toggle -->
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:boxBackgroundMode="outline"
-        app:boxStrokeColor="#17D970"
-        android:layout_marginBottom="16dp">
+        app:boxStrokeColor="#72BF78"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="#72BF78"
+        android:layout_marginBottom="32dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editTextConfirmPassword"
@@ -87,9 +92,10 @@
             android:hint="Konfirmasi Kata Sandi"
             android:drawableStart="@drawable/baseline_lock_24"
             android:drawablePadding="8dp"
+            android:padding="12dp"
             android:inputType="textPassword"
-            android:textColor="#000000"
-            android:padding="12dp" />
+            android:textColor="#333333"
+            android:textSize="16sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <!-- Register Button -->

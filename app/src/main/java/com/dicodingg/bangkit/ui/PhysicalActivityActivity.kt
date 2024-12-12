@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.dicodingg.bangkit.R
 import com.dicodingg.bangkit.databinding.ActivityPhysicalActivityBinding
 import com.google.android.material.snackbar.Snackbar
+import android.graphics.Color
 
 class PhysicalActivityActivity : AppCompatActivity() {
 
@@ -121,9 +122,18 @@ class PhysicalActivityActivity : AppCompatActivity() {
 
         override fun onBindViewHolder(holder: ExerciseViewHolder, position: Int) {
             val exercise = exercises[position]
-            holder.name.text = exercise.name
-            holder.duration.text = "${exercise.duration} menit"
-            holder.calories.text = "${exercise.calories.toInt()} cal"
+            holder.name.apply {
+                text = exercise.name
+                setTextColor(Color.BLACK)
+            }
+            holder.duration.apply {
+                text = "${exercise.duration} menit"
+                setTextColor(Color.BLACK)
+            }
+            holder.calories.apply {
+                text = "${exercise.calories.toInt()} cal"
+                setTextColor(Color.BLACK)
+            }
         }
 
         override fun getItemCount() = exercises.size
