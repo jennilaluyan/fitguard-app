@@ -15,7 +15,7 @@ class SettingsActivity : AppCompatActivity() {
 
         // Set up back button functionality (for now, it doesn't perform any action)
         binding.backButton.setOnClickListener {
-            // No action for now, just leave it empty as per your request
+            onBackPressed() // Use onBackPressed to go back
         }
     }
 }

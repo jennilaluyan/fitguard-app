@@ -3,7 +3,6 @@ package com.dicodingg.bangkit.ui
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.activity.viewModels
 import com.dicodingg.bangkit.R
@@ -14,9 +13,6 @@ import com.github.mikephil.charting.animation.Easing
 import com.github.mikephil.charting.data.PieData
 import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
-import java.text.SimpleDateFormat
-import java.util.Calendar
-import java.util.Locale
 
 class NutritionTrackerActivity : AppCompatActivity() {
 

@@ -98,7 +98,8 @@ dependencies {
     implementation(libs.androidx.datastore.preferences.core.jvm)
     implementation("com.google.android.material:material:1.9.0")
     implementation ("com.airbnb.android:lottie:5.2.0")
-
+    implementation("com.google.android.material:material:1.9.0")
+    implementation ("com.google.android.material:material:1.5.0")
 
     // Test dependencies
     testImplementation(libs.junit)
