@@ -100,6 +100,7 @@ dependencies {
     implementation ("com.airbnb.android:lottie:5.2.0")
     implementation("com.google.android.material:material:1.9.0")
     implementation ("com.google.android.material:material:1.5.0")
+    implementation("androidx.cardview:cardview:1.0.0")
 
     // Test dependencies
     testImplementation(libs.junit)

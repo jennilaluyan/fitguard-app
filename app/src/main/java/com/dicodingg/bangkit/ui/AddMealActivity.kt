@@ -1,9 +1,10 @@
 package com.dicodingg.bangkit.ui
 
-import android.R
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.MotionEvent
+import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -33,8 +34,8 @@ class AddMealActivity : AppCompatActivity() {
             "Sarapan", "Makan Siang", "Makan Malam" -> arrayOf("Porsi", "Piring", "Mangkuk")
             else -> arrayOf("Serving")
         }
-        val adapter = ArrayAdapter(this, R.layout.simple_spinner_item, portionTypes)
-        adapter.setDropDownViewResource(R.layout.simple_spinner_dropdown_item)
+        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, portionTypes)
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         binding.portionTypeSpinner.adapter = adapter
 
         // Set up add button
@@ -45,6 +46,24 @@ class AddMealActivity : AppCompatActivity() {
         // Set up back button
         binding.backButton.setOnClickListener {
             onBackPressed()
+        }
+
+        // Set up info logo click listener to show calorie information
+        binding.infoLogo.setOnClickListener {
+            toggleCalorieInfoBox()
+        }
+
+        // Set up outside click listener to hide calorie info box if clicked outside
+        binding.root.setOnTouchListener { v, event ->
+            // Check if the user clicks outside the calorie info box
+            if (binding.calorieInfoBox.visibility == View.VISIBLE) {
+                val outOfBounds = !isViewInBounds(binding.calorieInfoBox, event)
+                if (outOfBounds) {
+                    // Hide the calorie info box if clicked outside
+                    binding.calorieInfoBox.visibility = View.GONE
+                }
+            }
+            false
         }
     }
 
@@ -76,11 +95,29 @@ class AddMealActivity : AppCompatActivity() {
         onBackPressed()
     }
 
+    // Toggle calorie information box visibility
+    private fun toggleCalorieInfoBox() {
+        if (binding.calorieInfoBox.visibility == View.VISIBLE) {
+            binding.calorieInfoBox.visibility = View.GONE
+        } else {
+            binding.calorieInfoBox.visibility = View.VISIBLE
+        }
+    }
+
+    // Check if the event happened inside the view bounds
+    private fun isViewInBounds(view: View, event: MotionEvent): Boolean {
+        val location = IntArray(2)
+        view.getLocationOnScreen(location)
+        val x = event.rawX
+        val y = event.rawY
+        return x >= location[0] && x <= location[0] + view.width && y >= location[1] && y <= location[1] + view.height
+    }
+
     companion object {
         private const val ARG_MEAL_TYPE = "arg_meal_type"
 
         fun newIntent(context: Context, mealType: String): Intent {
-            val intent = Intent(context, AddMealActivity::class.java) // Gunakan 'context' di sini
+            val intent = Intent(context, AddMealActivity::class.java)
             intent.putExtra(ARG_MEAL_TYPE, mealType)
             return intent
         }

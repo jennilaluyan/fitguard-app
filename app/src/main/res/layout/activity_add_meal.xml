@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-        <!-- Variabel binding opsional -->
+        <!-- Optional binding variables -->
     </data>
 
     <RelativeLayout
@@ -36,6 +36,17 @@
                 android:textColor="@android:color/white"
                 android:textSize="22sp"
                 android:textStyle="bold" />
+
+            <!-- Info Logo -->
+            <ImageView
+                android:id="@+id/info_logo"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/ic_info"
+                android:contentDescription="Info"
+                android:layout_marginEnd="16dp"
+                android:layout_alignParentTop="true" />
         </RelativeLayout>
 
         <!-- Scrollable Content -->
@@ -115,5 +126,77 @@
                     android:textColor="@android:color/white" />
             </LinearLayout>
         </ScrollView>
+
+        <!-- Calorie Information Box (Centered with Padding, Rectangular, and Blurred Background) -->
+        <FrameLayout
+            android:id="@+id/calorie_info_box"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="16dp"
+            android:visibility="gone">
+
+            <!-- Text Box -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:gravity="center"
+                android:background="@drawable/rounded_background">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Kalori Informasi Umum"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Nasi: 200 cal / 100g"
+                    android:textSize="16sp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Telur: 68 cal / butir"
+                    android:textSize="16sp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ayam: 165 cal / 100g"
+                    android:textSize="16sp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ikan: 130 cal / 100g"
+                    android:textSize="16sp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sapi: 250 cal / 100g"
+                    android:textSize="16sp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Babi: 242 cal / 100g"
+                    android:textSize="16sp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tahu: 76 cal / 100g"
+                    android:textSize="16sp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tempe: 192 cal / 100g"
+                    android:textSize="16sp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Mi: 150 cal / 100g"
+                    android:textSize="16sp" />
+            </LinearLayout>
+        </FrameLayout>
     </RelativeLayout>
 </layout>
